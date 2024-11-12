@@ -1,0 +1,61 @@
+Topic,ID,Question,Answer A,Answer B,Answer C,Answer D,Correct,Explanation
+Cell Biology,10101,What is the basic unit of life?,Cell,Atom,Tissue,Organ,1,The cell is the smallest unit of life like the building block of an organism
+Cell Biology,10102,Where is genetic material stored in a cell?,Cytoplasm,Cell membrane,Nucleus,Mitochondria,3,The nucleus is like the brain of the cell containing all the genetic material
+Cell Biology,10103,What part of the cell controls cell activities?,Chloroplast,Nucleus,Cell wall,Ribosome,2,The nucleus acts like a control center directing the activities of the cell
+Cell Biology,10104,Which organelle is the powerhouse of the cell?,Mitochondria,Chloroplast,Nucleus,Lysosome,1,The mitochondria generate energy for the cell just like a power plant
+Cell Biology,10105,What structure surrounds and protects the cell?,Nucleus,Cell wall,Cell membrane,Cytoplasm,3,The cell membrane acts like a gatekeeper protecting the cell’s interior
+Cell Biology,10106,What substance fills most of the cell allowing organelles to move?,Chloroplast,Cytoplasm,DNA,Cell wall,2,The cytoplasm is like the gel inside the cell where everything floats around
+Cell Biology,10107,Which organelle breaks down food to release energy?,Mitochondria,Nucleus,Chloroplast,Endoplasmic reticulum,1,Mitochondria break down food to provide energy for the cell’s activities
+Cell Biology,10108,Where are proteins made in the cell?,Ribosome,Nucleus,Golgi apparatus,Cell wall,1,Ribosomes are like factories where proteins are made in the cell
+Cell Biology,10109,What process do cells use to divide and reproduce?,Photosynthesis,Meiosis,Mitosis,Fertilization,3,Mitosis is the process that divides a cell into two identical cells like cloning
+Cell Biology,10110,What organelle stores water nutrients and waste?,Chloroplast,Vacuole,Mitochondria,Ribosome,2,The vacuole acts like a storage tank for water and waste in the cell
+Cell Biology,10111,Which organelle provides structure in plant cells?,Cell wall,Ribosome,Lysosome,Nucleus,1,The cell wall provides structural support like the frame of a building
+Cell Biology,10112,Where are ribosomes made?,Nucleus,Mitochondria,Cytoplasm,Vacuole,1,The nucleus makes ribosomes which are then used for protein production
+Cell Biology,10113,What do you call cells without a nucleus?,Prokaryotic cells,Eukaryotic cells,Animal cells,Plant cells,1,Prokaryotic cells are simpler cells without a nucleus like bacteria
+Cell Biology,10114,What is the name of the process by which plants make food?,Photosynthesis,Cellular respiration,Fermentation,Mitosis,1,Photosynthesis is the process where plants make food using sunlight
+Cell Biology,10115,What is the genetic material that makes up chromosomes?,RNA,Protein,DNA,Lipid,3,DNA is the genetic code that makes up chromosomes and determines traits
+Genetics,10201,What carries genetic information in the cell?,DNA,Protein,Carbohydrate,RNA,1,DNA carries the genetic code that guides the development of an organism
+Genetics,10202,What are different forms of a gene called?,Alleles,Chromosomes,Gametes,Traits,1,Alleles are different versions of the same gene like variations of eye color
+Genetics,10203,What term describes an organism’s observable characteristics?,Genotype,Phenotype,DNA,Allele,2,Phenotype refers to the physical traits you can see like hair color
+Genetics,10204,What type of cell division produces sex cells?,Mitosis,Meiosis,Binary fission,Photosynthesis,2,Meiosis is the type of division that produces sex cells such as sperm and eggs
+Genetics,10205,How many chromosomes do humans typically have?,46,23,22,48,1,Humans have 46 chromosomes like two sets of 23
+Genetics,10206,Which part of the cell carries genes?,Nucleus,Mitochondria,Chromosomes,Ribosome,3,Chromosomes carry the genes in the nucleus like a blueprint for traits
+Genetics,10207,What are the building blocks of proteins?,Genes,Amino acids,Nucleotides,Chromosomes,2,Amino acids are the building blocks that make up proteins
+Genetics,10208,Which of these terms refers to a cell with half the normal chromosome number?,Diploid,Haploid,Triploid,Polyploid,2,Haploid cells have half the chromosomes like sex cells
+Genetics,10209,What is the genetic material that carries instructions for protein synthesis?,DNA,Protein,Carbohydrate,Lipid,2,DNA carries the instructions for making proteins in the cell
+Genetics,10210,How many alleles does a person inherit for each trait?,One,Two,Three,Four,2,A person inherits two alleles for each trait one from each parent
+Genetics,10211,What is the likelihood of inheriting a recessive trait from two heterozygous parents?,0%,25%,50%,75%,1,If both parents are heterozygous there’s a 25% chance of inheriting a recessive trait
+Genetics,10212,What are the male sex chromosomes?,XX,XY,ZZ,YY,2,Males have XY sex chromosomes while females have XX
+Genetics,10213,Which process allows traits to be passed to offspring?,Fertilization,Digestion,Respiration,Excretion,1,Fertilization is when sperm and egg unite to pass traits to the offspring
+Genetics,10214,What does a Punnett square show?,Genetic probability,DNA sequence,Amino acids,Cell division,1,A Punnett square shows the probability of genetic traits being inherited
+Genetics,10215,What is the role of RNA in cells?,Structure,Energy,Protein synthesis,Cell division,3,RNA helps in protein synthesis by carrying instructions from DNA
+Human Anatomy,10301,What is the main organ of the circulatory system?,Brain,Heart,Lungs,Liver,2,The heart pumps blood throughout the body circulating oxygen and nutrients
+Human Anatomy,10302,What system allows for movement and stability?,Nervous,Circulatory,Muscular,Endocrine,3,The muscular system controls movement and provides stability
+Human Anatomy,10303,What is the function of red blood cells?,Fight infection,Carry oxygen,Transport waste,Produce hormones,2,Red blood cells carry oxygen from the lungs to the rest of the body
+Human Anatomy,10304,Where are blood cells made in the body?,Heart,Liver,Bone marrow,Lungs,3,Blood cells are made in the bone marrow the body's blood factory
+Human Anatomy,10305,What is the largest organ in the human body?,Brain,Skin,Liver,Lungs,2,The skin is the largest organ covering and protecting the body
+Human Anatomy,10306,Which system breaks down food to provide energy?,Nervous,Digestive,Muscular,Respiratory,2,The digestive system breaks down food into energy
+Human Anatomy,10307,What part of the body protects internal organs and provides structure?,Heart,Skeleton,Lungs,Stomach,2,The skeleton provides structure and protects vital organs
+Human Anatomy,10308,What organ filters waste from the blood?,Lungs,Kidneys,Liver,Stomach,2,The kidneys filter waste from the blood to form urine
+Human Anatomy,10309,Which organ produces insulin?,Liver,Pancreas,Kidneys,Heart,2,The pancreas produces insulin which helps regulate blood sugar levels
+Human Anatomy,10310,How many chambers does the human heart have?,Two,Four,Three,Five,2,The human heart has four chambers: two atria and two ventricles
+Human Anatomy,10311,What system is responsible for fighting infection?,Circulatory,Immune,Respiratory,Digestive,2,The immune system defends the body against harmful invaders
+Human Anatomy,10312,What type of joint allows rotation in all directions?,Hinge,Pivot,Ball and socket,Saddle,3,The ball and socket joint like the shoulder allows movement in all directions
+Human Anatomy,10313,Where is bile stored?,Liver,Gallbladder,Stomach,Intestine,2,The gallbladder stores bile which helps digest fats
+Human Anatomy,10314,Which organ system includes the skin hair and nails?,Endocrine,Integumentary,Skeletal,Nervous,2,The integumentary system includes skin hair and nails like the body's outer covering
+Human Anatomy,10315,Which type of muscle is found only in the heart?,Skeletal,Cardiac,Smooth,Voluntary,2,Cardiac muscle is found only in the heart and helps it pump blood
+Ecology,10401,What is the term for living things in an ecosystem?,Biotic,Abiotic,Nonliving,Habitat,1,Biotic factors are the living things like plants and animals in an ecosystem
+Ecology,10402,What is the nonliving part of an ecosystem?,Abiotic,Biotic,Community,Biosphere,1,Abiotic factors include nonliving elements like water sunlight and soil
+Ecology,10403,What is the process plants use to make food?,Respiration,Photosynthesis,Reproduction,Transpiration,2,Photosynthesis is the process plants use to turn sunlight into food
+Ecology,10404,What term describes an organism that makes its own food?,Consumer,Producer,Decomposer,Parasite,2,Producers like plants make their own food through photosynthesis
+Ecology,10405,What type of organism breaks down dead materials?,Producer,Decomposer,Consumer,Predator,2,Decomposers break down dead material recycling nutrients back into the ecosystem
+Ecology,10406,What is a community of organisms and their environment called?,Habitat,Ecosystem,Population,Biosphere,2,An ecosystem includes all the organisms and their environment interacting together
+Ecology,10407,What is a series of steps in which organisms transfer energy by eating and being eaten?,Food chain,Food web,Ecosystem,Trophic level,1,A food chain shows how energy moves from one organism to another in an ecosystem
+Ecology,10408,Which type of organism obtains energy by eating other animals?,Producer,Herbivore,Carnivore,Omnivore,3,Carnivores eat other animals for energy like lions eating zebras
+Ecology,10409,What is the gradual process of change in an ecosystem?,Succession,Evolution,Growth,Decomposition,1,Succession is the gradual change of an ecosystem over time like from a forest to a meadow
+Ecology,10410,What term describes the variety of life in an ecosystem?,Diversity,Population,Biodiversity,Habitat,3,Biodiversity refers to the variety of life in an ecosystem like different species living together
+Ecology,10411,What is the primary source of energy for most ecosystems?,Water,Sunlight,Soil,Wind,2,Sunlight is the primary energy source for most ecosystems driving photosynthesis
+Ecology,10412,What happens to energy as it moves up a food chain?,Increases,Decreases,Stays the same,Doubles,2,Energy decreases as it moves up a food chain because organisms lose some energy as heat
+Ecology,10413,Which term refers to all members of one species in a specific area?,Community,Population,Habitat,Ecosystem,2,A population is all individuals of the same species in a specific area
+Ecology,10414,What is a relationship where both organisms benefit?,Mutualism,Parasitism,Commensalism,Competition,1,Mutualism is a relationship where both organisms benefit like bees and flowers
+Ecology,10415,What gas do plants absorb during photosynthesis?,Oxygen,Carbon dioxide,Nitrogen,Hydrogen,2,Plants absorb carbon dioxide during photosynthesis to make food

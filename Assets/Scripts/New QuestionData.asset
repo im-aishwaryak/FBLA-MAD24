@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41c8b0405ff43243846e11f8ee26d17, type: 3}
+  m_Name: New QuestionData
+  m_EditorClassIdentifier: 
+  questions:
+  - questionText: What is 1 + 1?
+    replies:
+    - 1
+    - 2
+    - 3
+    - 4
+    correctReplyIndex: 2
+  - questionText: 
+    replies: []
+    correctReplyIndex: 0
+  - questionText: 
+    replies: []
+    correctReplyIndex: 0
+  - questionText: 
+    replies: []
+    correctReplyIndex: 0
+  - questionText: 
+    replies: []
+    correctReplyIndex: 0

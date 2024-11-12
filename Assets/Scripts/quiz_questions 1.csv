@@ -1,0 +1,61 @@
+Topic,ID,Question,Answer A,Answer B,Answer C,Answer D,Correct
+Cell Biology,10101,What is the basic unit of life?,Cell*,Atom,Tissue,Organ,1
+Cell Biology,10102,Where is genetic material stored in a cell?,Cytoplasm,Cell membrane,Nucleus*,Mitochondria,3
+Cell Biology,10103,What part of the cell controls cell activities?,Chloroplast,Nucleus*,Cell wall,Ribosome,2
+Cell Biology,10104,Which organelle is the powerhouse of the cell?,Mitochondria*,Chloroplast,Nucleus,Lysosome,1
+Cell Biology,10105,What structure surrounds and protects the cell?,Nucleus,Cell wall,Cell membrane*,Cytoplasm,3
+Cell Biology,10106,"What substance fills most of the cell, allowing organelles to move?",Chloroplast,Cytoplasm*,DNA,Cell wall,2
+Cell Biology,10107,Which organelle breaks down food to release energy?,Mitochondria*,Nucleus,Chloroplast,Endoplasmic reticulum,1
+Cell Biology,10108,Where are proteins made in the cell?,Ribosome*,Nucleus,Golgi apparatus,Cell wall,1
+Cell Biology,10109,What process do cells use to divide and reproduce?,Photosynthesis,Meiosis,Mitosis*,Fertilization,3
+Cell Biology,10110,"What organelle stores water, nutrients, and waste?",Chloroplast,Vacuole*,Mitochondria,Ribosome,2
+Cell Biology,10111,Which organelle provides structure in plant cells?,Cell wall*,Ribosome,Lysosome,Nucleus,1
+Cell Biology,10112,Where are ribosomes made?,Nucleus*,Mitochondria,Cytoplasm,Vacuole,1
+Cell Biology,10113,What do you call cells without a nucleus?,Prokaryotic cells*,Eukaryotic cells,Animal cells,Plant cells,1
+Cell Biology,10114,What is the name of the process by which plants make food?,Photosynthesis*,Cellular respiration,Fermentation,Mitosis,1
+Cell Biology,10115,What is the genetic material that makes up chromosomes?,RNA,Protein,DNA*,Lipid,3
+Genetics,10201,What carries genetic information in the cell?,DNA*,Protein,Carbohydrate,RNA,1
+Genetics,10202,What are different forms of a gene called?,Alleles*,Chromosomes,Gametes,Traits,1
+Genetics,10203,What term describes an organism’s observable characteristics?,Genotype,Phenotype*,DNA,Allele,2
+Genetics,10204,What type of cell division produces sex cells?,Mitosis,Meiosis*,Binary fission,Photosynthesis,2
+Genetics,10205,How many chromosomes do humans typically have?,46*,23,22,48,1
+Genetics,10206,Which part of the cell carries genes?,Nucleus,Mitochondria,Chromosomes*,Ribosome,3
+Genetics,10207,What are the building blocks of proteins?,Genes,Amino acids*,Nucleotides,Chromosomes,2
+Genetics,10208,Which of these terms refers to a cell with half the normal chromosome number?,Diploid,Haploid*,Triploid,Polyploid,1
+Genetics,10209,What is the genetic material that carries instructions for protein synthesis?,DNA*,Protein,Carbohydrate,Lipid,2
+Genetics,10210,How many alleles does a person inherit for each trait?,One,Two*,Three,Four,2
+Genetics,10211,What is the likelihood of inheriting a recessive trait from two heterozygous parents?,0%,25%,50%,75%*,1
+Genetics,10212,What are the male sex chromosomes?,XX,XY*,ZZ,YY,2
+Genetics,10213,Which process allows traits to be passed to offspring?,Fertilization*,Digestion,Respiration,Excretion,1
+Genetics,10214,What does a Punnett square show?,Genetic probability*,DNA sequence,Amino acids,Cell division,3
+Genetics,10215,What is the role of RNA in cells?,Structure,Energy,Protein synthesis*,Cell division,3
+Human Anatomy,10301,What is the main organ of the circulatory system?,Brain,Heart*,Lungs,Liver,2
+Human Anatomy,10302,What system allows for movement and stability?,Nervous,Circulatory,Muscular*,Endocrine,3
+Human Anatomy,10303,What is the function of red blood cells?,Fight infection,Carry oxygen*,Transport waste,Produce hormones,
+Human Anatomy,10304,Where are blood cells made in the body?,Heart,Liver,Bone marrow*,Lungs,
+Human Anatomy,10305,What is the largest organ in the human body?,Brain,Skin*,Liver,Lungs,
+Human Anatomy,10306,Which system breaks down food to provide energy?,Nervous,Digestive*,Muscular,Respiratory,
+Human Anatomy,10307,What part of the body protects internal organs and provides structure?,Heart,Skeleton*,Lungs,Stomach,
+Human Anatomy,10308,What organ filters waste from the blood?,Lungs,Kidneys*,Liver,Stomach,
+Human Anatomy,10309,Which organ produces insulin?,Liver,Pancreas*,Kidneys,Heart,
+Human Anatomy,10310,How many chambers does the human heart have?,Two,Four*,Three,Five,
+Human Anatomy,10311,What is the function of white blood cells?,Fight infection*,Carry oxygen,Store energy,Filter waste,
+Human Anatomy,10312,What type of joint allows rotation in all directions?,Hinge,Pivot,Ball and socket*,Saddle,
+Human Anatomy,10313,Where is bile stored?,Liver,Gallbladder*,Stomach,Intestine,
+Human Anatomy,10314,"Which organ system includes the skin, hair, and nails?",Endocrine,Integumentary*,Skeletal,Nervous,
+Human Anatomy,10315,Which type of muscle is found only in the heart?,Skeletal,Cardiac*,Smooth,Voluntary,
+Ecology,10401,What is the term for living things in an ecosystem?,Biotic*,Abiotic,Nonliving,Habitat,
+Ecology,10402,What is the nonliving part of an ecosystem?,Abiotic*,Biotic,Community,Biosphere,
+Ecology,10403,What is the process plants use to make food?,Respiration,Photosynthesis*,Reproduction,Transpiration,
+Ecology,10404,What term describes an organism that makes its own food?,Consumer,Producer*,Decomposer,Parasite,
+Ecology,10405,What type of organism breaks down dead materials?,Producer,Decomposer*,Consumer,Predator,
+Ecology,10406,What is a community of organisms and their environment called?,Habitat,Ecosystem*,Population,Biosphere,
+Ecology,10407,What is a series of steps in which organisms transfer energy by eating and being eaten?,Food chain*,Food web,Ecosystem,Trophic level,
+Ecology,10408,Which type of organism obtains energy by eating other animals?,Producer,Herbivore,Carnivore*,Omnivore,
+Ecology,10409,What is the gradual process of change in an ecosystem?,Succession*,Evolution,Growth,Decomposition,
+Ecology,10410,What term describes the variety of life in an ecosystem?,Diversity,Population,Biodiversity*,Habitat,
+Ecology,10411,What is the primary source of energy for most ecosystems?,Water,Sunlight*,Soil,Wind,
+Ecology,10412,What happens to energy as it moves up a food chain?,Increases,Decreases*,Stays the same,Doubles,
+Ecology,10413,Which term refers to all members of one species in a specific area?,Community,Population*,Habitat,Ecosystem,
+Ecology,10414,What is a relationship where both organisms benefit?,Mutualism*,Parasitism,Commensalism,Competition,
+Ecology,10415,What gas do plants absorb during photosynthesis?,Oxygen,Carbon dioxide*,Nitrogen,Hydrogen,
