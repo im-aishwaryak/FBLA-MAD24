@@ -7,7 +7,7 @@ public class SnowballScript : MonoBehaviour
 {
     public SnowballGenerator snowballGenerator;
     public LogicScript logic;
-    void start(){
+    void Start(){
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
     
@@ -16,7 +16,9 @@ public class SnowballScript : MonoBehaviour
     void Update()
     {
         // Move the snowball to the left based on the current speed
-        transform.Translate(Vector2.left * snowballGenerator.currentSpeed * Time.deltaTime);
+        if(logic.alive()){
+            transform.Translate(Vector2.left * snowballGenerator.currentSpeed * Time.deltaTime);
+        }
     }
 
     // Trigger event when the snowball collides with another object

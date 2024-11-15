@@ -10,12 +10,12 @@ public class SnowballGenerator : MonoBehaviour
     public float MinSpeed;
     public float MaxSpeed;
     public float currentSpeed;
-    public LogicScript logic;
+    // public LogicScript logic;
 
     public float SpeedMultiplier;
     public TextMeshProUGUI distanceLeft;
-    
-    void start(){
+    public LogicScript logic;
+    void Start(){
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
@@ -58,7 +58,6 @@ public class SnowballGenerator : MonoBehaviour
 
         if(logic.alive()){
             distanceLeft.text = "Distance left - " + ((MaxSpeed - currentSpeed)*10) + " ft";
-
         }
 
     }

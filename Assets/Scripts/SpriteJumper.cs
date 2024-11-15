@@ -12,6 +12,10 @@ public class SpriteJumper : MonoBehaviour
 
     // Reference to the Pause Canvas
     public GameObject pauseCanvas;
+    public LogicScript logic;
+    void Start(){
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+    }
 
     // Called when the script is initialized
     private void Awake()
@@ -42,7 +46,8 @@ public class SpriteJumper : MonoBehaviour
         // Check if the character collides with the snowball
         if (collision.gameObject.CompareTag("Snowball"))
         {
-            PauseGame(); // Pause the game and show the canvas
+            // PauseGame(); // Pause the game and show the canvas
+            logic.gameOver();//ends game
         }
     }
 
@@ -56,9 +61,9 @@ public class SpriteJumper : MonoBehaviour
     }
 
     // Method to pause the game and show the canvas
-    private void PauseGame()
-    {
-        Time.timeScale = 0f; // Pauses the game
-        pauseCanvas.SetActive(true); // Makes the pause canvas visible
-    }
+    // private void PauseGame()
+    // {
+    //     // Time.timeScale = 0f; // Pauses the game
+    //     pauseCanvas.SetActive(true); // Makes the pause canvas visible
+    // }
 }

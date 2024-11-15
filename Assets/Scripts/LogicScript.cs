@@ -17,6 +17,7 @@ public class LogicScript : MonoBehaviour
 
     // Update is called once per frame
     public void gameOver(){
+        Debug.Log("Game Over!");
         gameOverScreen.SetActive(true);
         isAlive = false;
     }
