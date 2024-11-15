@@ -6,6 +6,10 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class SnowballScript : MonoBehaviour
 {
     public SnowballGenerator snowballGenerator;
+    public LogicScript logic;
+    void start(){
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+    }
     
 
     // Update is called once per frame

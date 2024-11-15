@@ -8,6 +8,7 @@ public class Logic : MonoBehaviour
 {
     // Start is called before the first frame update
     public int score = 0;
+    private bool isAlive = true;
     public GameObject gameOverScreen;
 
     public void restartGame(){
@@ -17,5 +18,10 @@ public class Logic : MonoBehaviour
     // Update is called once per frame
     public void gameOver(){
         gameOverScreen.SetActive(true);
+        isAlive = false;
+    }
+
+    public bool alive(){
+        return isAlive;
     }
 }
