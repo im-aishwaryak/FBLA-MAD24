@@ -66,8 +66,6 @@ public class QuizManager : MonoBehaviour
         // Check if the selected answer is correct
         if (selectedAnswerIndex == correctAnswerIndex)
         {
-            // Directly change the button color without waiting
-            //ChangeButtonColorImmediately(answerButtons[selectedAnswerIndex], correctColor);
             score++; // Increase score if correct
             wallChanger.Move(selectedAnswerIndex == correctAnswerIndex);
             spriteChanger.climb(3);
@@ -75,35 +73,32 @@ public class QuizManager : MonoBehaviour
         else
         {
             wallChanger.Move(selectedAnswerIndex == correctAnswerIndex);
-            // Directly change the button color without waiting
-            //ChangeButtonColorImmediately(answerButtons[selectedAnswerIndex], wrongColor);
         }
 
         // Update the score UI
         scoreText.text = "Correctly Answered - " + score;
 
         // Display the explanation
-        explanationText.text = explanation;  // Display the explanation
+        explanationText.text = explanation;
 
-        // Move to the next question immediately, without delay
+        // Move to the next question
         currentQuestionIndex++;
-        if (currentQuestionIndex < csvReader.questions.Count)
-        {
-            // Reset button listeners for the next question
-            foreach (Button button in answerButtons)
-            {
-                button.onClick.RemoveAllListeners();
-            }
 
-            DisplayQuestion(); // Display the next question
-        }
-        else
+        // Loop questions without end
+        if (currentQuestionIndex >= csvReader.questions.Count)
         {
-            // Optionally, display a message when the quiz is over
-            questionText.text = "Quiz Over!";
-            explanationText.text = ""; // Clear explanation at the end of the quiz
+            currentQuestionIndex = 0; // Reset to the first question
         }
+
+        // Reset button listeners for the next question
+        foreach (Button button in answerButtons)
+        {
+            button.onClick.RemoveAllListeners();
+        }
+
+        DisplayQuestion(); // Display the next question
     }
+
 
     /*
     private IEnumerator WaitForNextAction()

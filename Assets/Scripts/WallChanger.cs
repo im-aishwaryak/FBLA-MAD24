@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class WallChanger : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class WallChanger : MonoBehaviour
 
     public GameObject quizCanvas;
     public SpriteChanger spriteChanger;
+
+    private bool reachedtop = false;
+
+    [SerializeField] private AudioClip climbingSound;
+    [SerializeField] private AudioClip scratchingSound;
 
 
     void Start()
@@ -38,9 +44,12 @@ public class WallChanger : MonoBehaviour
         distanceLeft = (transform.position.y - minYPosition);
         elevationText.text = "Distance Left - " + distanceLeft + " ft";
 
-        if (transform.position.y == minYPosition)
+        if ((transform.position.y == minYPosition) && (reachedtop == false))
         {
+            reachedtop = true;
             OnMinHeightReached();
+            Debug.Log("am i the problem uwu >>>");
+
         }
     }
     public void Move(bool isCorrect)
@@ -53,7 +62,16 @@ public class WallChanger : MonoBehaviour
 
             // Move up or down based on whether the answer is correct
             isCorrect = !(isCorrect);
-            Vector2 forceDirection = isCorrect ? Vector2.up : Vector2.down;
+            Vector2 forceDirection;
+            if (isCorrect) 
+            {
+                forceDirection = Vector2.up;
+                SoundManager.instance.PlaySound(scratchingSound);
+            } else
+            {
+                forceDirection = Vector2.down;
+                SoundManager.instance.PlaySound(climbingSound);
+            }
             rb.AddForce(forceDirection * moveForce, ForceMode2D.Impulse);
 
             // Stop movement after the specified duration
@@ -78,8 +96,8 @@ public class WallChanger : MonoBehaviour
             quizCanvas.SetActive(false);
         }
 
-       // spriteChanger.climbCorner();
+       spriteChanger.climbCorner();
 
-        Application.Quit(); // Stops the program
+       // Application.Quit(); // Stops the program
     }
 }
