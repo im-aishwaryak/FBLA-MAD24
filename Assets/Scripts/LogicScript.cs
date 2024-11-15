@@ -10,6 +10,7 @@ public class LogicScript : MonoBehaviour
     public int score = 0;
     private bool isAlive = true;
     public GameObject gameOverScreen;
+    public GameObject wonGameScreen;
 
     public void restartGame(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -24,5 +25,11 @@ public class LogicScript : MonoBehaviour
 
     public bool alive(){
         return isAlive;
+    }
+
+    public void gameWon(){
+        isAlive = false;
+        wonGameScreen.SetActive(true);
+
     }
 }
