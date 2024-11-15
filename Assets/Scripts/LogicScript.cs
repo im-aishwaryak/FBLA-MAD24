@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Logic : MonoBehaviour
+public class LogicScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public int score = 0;

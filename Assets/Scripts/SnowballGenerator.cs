@@ -10,9 +10,14 @@ public class SnowballGenerator : MonoBehaviour
     public float MinSpeed;
     public float MaxSpeed;
     public float currentSpeed;
+    public LogicScript logic;
 
     public float SpeedMultiplier;
     public TextMeshProUGUI distanceLeft;
+    
+    void start(){
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -24,8 +29,11 @@ public class SnowballGenerator : MonoBehaviour
 
     public void GenerateNextSnowballWithGap()
     {
-        float randomWait = Random.Range(0.1f, 1.2f);
-        Invoke("generatesnowball", randomWait);
+        if(logic.alive()){
+            float randomWait = Random.Range(0.1f, 1.2f);
+            Invoke("generatesnowball", randomWait);
+        }
+        
     }
 
     // Method to generate the snowball
@@ -45,9 +53,13 @@ public class SnowballGenerator : MonoBehaviour
         } else if (currentSpeed >= MaxSpeed)
         {
             currentSpeed = 0;
+            //end game
         }
 
-        distanceLeft.text = "Distance left - " + ((MaxSpeed - currentSpeed)*10) + " ft";
+        if(logic.alive()){
+            distanceLeft.text = "Distance left - " + ((MaxSpeed - currentSpeed)*10) + " ft";
+
+        }
 
     }
 }

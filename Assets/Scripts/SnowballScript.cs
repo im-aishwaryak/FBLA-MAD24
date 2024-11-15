@@ -17,7 +17,6 @@ public class SnowballScript : MonoBehaviour
     {
         // Move the snowball to the left based on the current speed
         transform.Translate(Vector2.left * snowballGenerator.currentSpeed * Time.deltaTime);
-        
     }
 
     // Trigger event when the snowball collides with another object
