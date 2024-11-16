@@ -10,7 +10,7 @@ public class QuizManager : MonoBehaviour
     public Text explanationText;  // New Text field for the explanation
 
     [SerializeField] private CSVReader csvReader; // Reference to CSVReader
-    private int currentQuestionIndex = 0;
+    private int currentQuestionIndex = 0 + (15 * LogicScript.level);
     private int score = 0;
 
     // Answer button colors
@@ -37,6 +37,7 @@ public class QuizManager : MonoBehaviour
             Debug.LogError("No questions available.");
         }
     }
+
 
     void DisplayQuestion()
     {

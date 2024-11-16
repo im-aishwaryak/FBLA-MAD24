@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SpriteChanger : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class SpriteChanger : MonoBehaviour
         StartCoroutine(WalkOffScreen());
 
         isChangingSprites = false;
+
+        SceneManager.LoadScene("Part 2");
     }
 
     // Coroutine to smoothly move the character to the side

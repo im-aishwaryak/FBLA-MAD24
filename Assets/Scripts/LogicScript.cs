@@ -11,7 +11,9 @@ public class LogicScript : MonoBehaviour
     private bool isAlive = true;
     public GameObject gameOverScreen;
     public GameObject wonGameScreen;
-    public int level = 0;
+    public static int level = 0;
+
+    public QuizManager quizManager;
 
     public void restartGame(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -36,7 +38,8 @@ public class LogicScript : MonoBehaviour
     }
 
     public void nextLevel(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Part 1");
     }
 
     public int getLevel(){
