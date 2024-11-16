@@ -84,9 +84,14 @@ class ProgressScreen extends StatelessWidget {
                     // Add more levels as needed
                     // Level 4
                     _buildLevelProgress('Level 4', 0, context),
+                    SizedBox(height: 20),
+
+                    _buildLevelProgress('Level 5', 0, context),
+
                         ]
                       ),
                                   ),
+                  
                   ),
               ],
           ), 

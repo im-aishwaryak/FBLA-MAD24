@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'progress_screen.dart'; 
 import 'game_screen.dart'; 
+import 'settings.dart'; 
 
 
 class HomePage extends StatelessWidget {
@@ -85,7 +86,10 @@ class HomePage extends StatelessWidget {
                       // Third image button
                       InkWell(
                         onTap: () {
-                          print('Third image button clicked');
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(builder: (context) => SettingsPage()),
+                            );
                         },
                         child: Image.asset(
                           'assets/5.png', // Image path
