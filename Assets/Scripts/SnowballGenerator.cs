@@ -15,7 +15,9 @@ public class SnowballGenerator : MonoBehaviour
     public float SpeedMultiplier;
     public TextMeshProUGUI distanceLeft;
     public LogicScript logic;
-    void Start(){
+
+    public int shardsCollected = 0;
+    void Start() {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
@@ -24,7 +26,13 @@ public class SnowballGenerator : MonoBehaviour
     {
         transform.position = new Vector3(25, 0, 0);
         currentSpeed = MinSpeed;
-        generatesnowball();
+        // if(Random.Range(0, 1) == 0 && shardsCollected < logic.getLevel()){
+            //false: generate shard
+            // generateShard();
+        // } else {
+            generatesnowball();
+        // }
+        
     }
 
     public void GenerateNextSnowballWithGap()
@@ -37,27 +45,31 @@ public class SnowballGenerator : MonoBehaviour
     }
 
     // Method to generate the snowball
-    public void generatesnowball()
-    {
+    public void generatesnowball() {
         GameObject snowballIns = Instantiate(snowball, transform.position, transform.rotation);
-
         snowballIns.GetComponent<SnowballScript>().snowballGenerator = this;
     }
 
+    // public void generateShard(){
+    //     GameObject snowballIns = Instantiate(snowball, transform.position, transform.rotation);
+    //     snowballIns.GetComponent<SnowballScript>().snowballGenerator = this;
+    // }
+
     // Update is called once per frame
-    void Update()
-    {
-        if(currentSpeed < MaxSpeed)
-        {
+    void Update() {
+        if (currentSpeed < MaxSpeed) {
             currentSpeed += SpeedMultiplier;
-        } else if (currentSpeed >= MaxSpeed)
-        {
+        } else if (currentSpeed >= MaxSpeed) {
             currentSpeed = 0;
             //end game
+            logic.gameWon();
+            distanceLeft.text = "Distance left: 0 ft";
+            Time.timeScale = 0f;
+            
         }
 
         if(logic.alive()){
-            distanceLeft.text = "Distance left - " + ((MaxSpeed - currentSpeed)*10) + " ft";
+            distanceLeft.text = "Distance left: " + ((MaxSpeed - currentSpeed)*10) + " ft";
         }
 
     }
