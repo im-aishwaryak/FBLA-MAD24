@@ -1,0 +1,35 @@
+name: flutter_mad
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 0.0.1+1
+
+environment:
+  sdk: ^3.1.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  english_words: ^4.0.0
+  provider: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/mountain background.png
+    - assets/3.png
+    - assets/4.png
+    - assets/5.png
+    - assets/Your paragraph text.png
+    - assets/Your paragraph text (4).png
+    - assets/home background.png
+    - assets/plain sky background.png
+    - assets/snowball.png

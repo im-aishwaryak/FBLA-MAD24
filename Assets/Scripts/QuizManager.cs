@@ -69,6 +69,7 @@ public class QuizManager : MonoBehaviour
             score++; // Increase score if correct
             wallChanger.Move(selectedAnswerIndex == correctAnswerIndex);
             spriteChanger.climb(3);
+            //ChangeButtonColorImmediately(answerButtons[selectedAnswerIndex], correctColor);
         }
         else
         {
@@ -94,13 +95,14 @@ public class QuizManager : MonoBehaviour
         foreach (Button button in answerButtons)
         {
             button.onClick.RemoveAllListeners();
+            WaitForNextAction(); 
         }
 
         DisplayQuestion(); // Display the next question
     }
 
 
-    /*
+    
     private IEnumerator WaitForNextAction()
     {
         // Wait for 0.5 seconds
@@ -114,8 +116,8 @@ public class QuizManager : MonoBehaviour
     // Directly change the button color without waiting
     private void ChangeButtonColorImmediately(Button button, Color targetColor)
     {
-        //Image buttonImage = button.GetComponent<Image>(); // Get the Image component of the button
-        //buttonImage.color = targetColor; // Set the button color to the target color
+        Image buttonImage = button.GetComponent<Image>(); // Get the Image component of the button
+        buttonImage.color = targetColor; // Set the button color to the target color
     }
-    */
+    
 }
