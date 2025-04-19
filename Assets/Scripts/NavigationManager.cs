@@ -14,6 +14,7 @@ public class NavigationManager : MonoBehaviour
 
     public void GoToTrail()
     {
+        Debug.Log("kys"); 
         SceneManager.LoadScene("Quiz"); 
     }
 
