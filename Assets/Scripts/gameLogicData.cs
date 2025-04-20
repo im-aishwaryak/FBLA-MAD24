@@ -6,10 +6,10 @@ public class gameLogicData{
 
 
     public void loseStuff(){
-        foreach (string ingredient in inventory)
+        foreach (KeyValuePair<string, int> ingredient in inventory)
         {
-            if(inventory[ingredient] > 0){
-                inventory[ingredient] -=1;
+            if(ingredient.Value > 0){
+                inventory[ingredient.Key] -=1;
             } else {
                 
             }

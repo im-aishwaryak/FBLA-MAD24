@@ -1,8 +1,10 @@
 using UnityEngine;
 
+
 public class SpriteJumper : MonoBehaviour
 {
     public float JumpForce; // Adjustable jump force in the Unity Inspector
+    public gameLogicData globalLogic;
 
     // Declare Rigidbody2D reference
     [SerializeField]
@@ -15,6 +17,7 @@ public class SpriteJumper : MonoBehaviour
     public LogicScript logic;
     void Start(){
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        // globalLogic = GameObject.FindGameObjectWithTag()
     }
 
     // Called when the script is initialized
@@ -55,7 +58,7 @@ public class SpriteJumper : MonoBehaviour
         {
             // PauseGame(); // Pause the game and show the canvas
             // logic.gameOver();//ends game
-            gameLogicData.loseStuff();
+            // gameLogicData.loseStuff();
         }
     }
 
