@@ -27,18 +27,20 @@ public class SnowballScript : MonoBehaviour
     // Trigger event when the snowball collides with another object
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the collision object has the tag "nextLine"
-        if (collision.gameObject.CompareTag("nextLine"))
-        {
-            snowballGenerator.GenerateNextSnowballWithGap(); // Calls generatesnowball method
-        }
-
         if (collision.gameObject.CompareTag("Player"))
         {
             // Debug.Log()
             gameLogicData.Instance.loseStuff();
             Destroy(this.gameObject);
         }
+        
+        // Check if the collision object has the tag "nextLine"
+        if (collision.gameObject.CompareTag("nextLine"))
+        {
+            snowballGenerator.GenerateNextSnowballWithGap(); // Calls generatesnowball method
+        }
+
+        
 
 
     }

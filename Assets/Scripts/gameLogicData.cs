@@ -11,7 +11,8 @@ public class gameLogicData : MonoBehaviour{
 
     public int playerScore;
     public string selectedSubject;
-    public bool gamePaused = false;    private Dictionary <string, int> inventory = new Dictionary<string, int>(){
+    public bool gamePaused = false;
+    private Dictionary <string, int> inventory = new Dictionary<string, int>(){
         {"GoldBerry", 0},
         {"Raspberry", 0},
         {"ThorneBerry", 0}
@@ -31,15 +32,36 @@ public class gameLogicData : MonoBehaviour{
         }
     }
     public void loseStuff(){
-        foreach (KeyValuePair<string, int> ingredient in inventory)
+        var keys = new List<string>(inventory.Keys);
+        
+        foreach (var key in keys)
         {
-            if(ingredient.Value > 0){
-                inventory[ingredient.Key] -=1;
+            if(inventory[key] > 0){
+                inventory[key] -=1;
             } else {
                 
             }
-            
         }
+    }
+
+    public void incrementBerry(string berryName){
+        inventory[berryName] += 1;
+    }
+
+    public Dictionary<string, int> getInventory(){
+        return inventory;
+    }
+
+    public int getThorneBerries(){
+        return inventory["ThorneBerry"];
+    }
+
+    public int getRaspberry(){
+        return inventory["Raspberry"];
+    }
+
+    public int getGoldBerry(){
+        return inventory["GoldBerry"];
     }
 
 }

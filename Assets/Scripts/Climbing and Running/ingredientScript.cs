@@ -9,12 +9,14 @@ public class ingredientScript : MonoBehaviour
     public LogicScript logic;
     public  SpriteRenderer spriteRenderer;
     public Sprite[] ingredientSprites;
+    private int i = 0;//the index of the ingredient
 
     // Start is called before the first frame update
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        spriteRenderer.sprite = ingredientSprites[Random.Range(0, ingredientSprites.Length)];
+        i = Random.Range(0, ingredientSprites.Length);
+        spriteRenderer.sprite = ingredientSprites[i];
     }
 
     // Update is called once per frame
@@ -35,7 +37,17 @@ public class ingredientScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Debug.Log()
-            Debug.Log("Get BErry");
+            if(i == 0){
+                //it is a throneberry
+                gameLogicData.Instance.incrementBerry("ThorneBerry");
+            } else if (i == 1){
+                //it is a raspberry
+                gameLogicData.Instance.incrementBerry("Raspberry");
+            } else {
+                //it is a goldberry
+                gameLogicData.Instance.incrementBerry("GoldBerry");
+
+            }
             Destroy(this.gameObject);
         }
 

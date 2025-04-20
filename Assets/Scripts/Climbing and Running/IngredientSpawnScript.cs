@@ -13,6 +13,7 @@ public class IngredientSpawnScript : MonoBehaviour
     private float timer = 0;
 
     private float heightOffset = 2.4f;
+    public TextMeshProUGUI inventCount;
     void Start()
     {
         spawnIngredient();
@@ -30,16 +31,22 @@ public class IngredientSpawnScript : MonoBehaviour
             } else {
                 spawnRate = Random.Range(3,5);
             }
-           
             timer = 0;
         }
-        
+
+        //update count
+        updateCount();
     }
+
+    void updateCount(){
+        inventCount.text = gameLogicData.Instance.getGoldBerry() + "\n" + gameLogicData.Instance.getThorneBerries() + "\n" + gameLogicData.Instance.getRaspberry() + "\n";
+    }
+
+
 
     void spawnIngredient(){
         float lowestPoint = transform.position.y - heightOffset;
         float highestPoint = transform.position.y + heightOffset;
         Instantiate(ingredient, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
-        
     }
 }

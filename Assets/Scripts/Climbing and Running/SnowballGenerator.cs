@@ -66,7 +66,6 @@ public class SnowballGenerator : MonoBehaviour
             logic.gameWon();
             distanceLeft.text = "Time Left: 0 seconds";
             Time.timeScale = 0f;
-            
         }
 
         if(logic.alive()){
