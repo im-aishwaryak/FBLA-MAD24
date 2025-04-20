@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Home.unity
     guid: 4fcc8c119676646498bce5e9421183a2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/ProfileScreen.unity
     guid: 01121fce3505b1e48a88d8b9b6092d83
   - enabled: 1
