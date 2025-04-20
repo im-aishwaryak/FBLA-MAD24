@@ -6,21 +6,38 @@ using UnityEngine.SceneManagement;
 
 public class NavigationManager : MonoBehaviour
 {
-    public void GoToProfile()
+    public void GoToHome()
     {
-        Debug.Log("working"); 
-        SceneManager.LoadScene("ProfileScreen"); 
+        SceneManager.LoadScene("Home"); 
+    }
+    public void ResumeJourney()
+    {
+        SceneManager.LoadScene("Quiz"); 
     }
 
-    public void GoToTrail()
+    public void GoToTrails()
     {
-        Debug.Log("kys"); 
-        SceneManager.LoadScene("Quiz"); 
+        SceneManager.LoadScene("UserTrails"); 
     }
 
     public void GoToShop()
     {
-        SceneManager.LoadScene("ShopScreen"); 
+        SceneManager.LoadScene("Dashboard"); 
+    }
+
+    public void GoToLibrary()
+    {
+        SceneManager.LoadScene("Library"); 
+    }
+
+    public void GoToUserGuide()
+    {
+        SceneManager.LoadScene("Instructions"); 
+    }
+
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene("Settings"); 
     }
 
     public void QuitGame()
