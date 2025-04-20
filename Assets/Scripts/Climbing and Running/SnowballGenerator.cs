@@ -70,12 +70,9 @@ public class SnowballGenerator : MonoBehaviour
         }
 
         if(logic.alive()){
-            Debug.Log(time);
-            // Debug.Log(distanceLeft.text);
-            // Debug.Log("Testing");
+            // Debug.Log(time);
             time-=(Time.deltaTime);
             distanceLeft.text = "Time Left: " + Mathf.FloorToInt(time) + " seconds left";
-            // Debug.Log("time: " + Time.deltaTime);
         }
 
     }

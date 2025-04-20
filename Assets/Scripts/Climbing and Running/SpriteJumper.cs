@@ -64,12 +64,17 @@ public class SpriteJumper : MonoBehaviour
         }
 
         // Check if the character collides with the snowball
-        if (collision.gameObject.CompareTag("Snowball"))
-        {
-            // PauseGame(); // Pause the game and show the canvas
-            // logic.gameOver();//ends game
-            // gameLogicData.loseStuff();
-        }
+        // if (collision.gameObject.CompareTag("Snowball"))
+        // {
+        //     // PauseGame(); // Pause the game and show the canvas
+        //     // logic.gameOver();//ends game
+        //     // gameLogicData.loseStuff();
+        // }
+
+        // if(collision.gameObject.CompareTag("ingredient")){
+        //     Debug.Log("Get BErry");
+
+        // }
     }
 
     // Called when the character exits a collision with another object

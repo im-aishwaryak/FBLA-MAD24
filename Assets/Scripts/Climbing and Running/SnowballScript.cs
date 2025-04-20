@@ -19,6 +19,9 @@ public class SnowballScript : MonoBehaviour
         if(logic.alive()){
             transform.Translate(Vector2.left * snowballGenerator.currentSpeed * Time.deltaTime);
         }
+        if(transform.position.x < -14){
+            Destroy(this.gameObject);
+        }
     }
 
     // Trigger event when the snowball collides with another object
@@ -30,9 +33,13 @@ public class SnowballScript : MonoBehaviour
             snowballGenerator.GenerateNextSnowballWithGap(); // Calls generatesnowball method
         }
 
-        if (collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Player"))
         {
+            // Debug.Log()
+            Debug.Log("Lose stuff!!!");
             Destroy(this.gameObject);
         }
+
+
     }
 }

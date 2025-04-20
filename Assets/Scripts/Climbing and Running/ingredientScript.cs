@@ -29,19 +29,17 @@ public class ingredientScript : MonoBehaviour
         }
     }
 
-    // Trigger event when the snowball collides with another object
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+   private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the collision object has the tag "nextLine"
-        if (collision.gameObject.CompareTag("nextLine"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // ingredientGenerator.GenerateNextSnowballWithGap(); // Calls generatesnowball method
+            // Debug.Log()
+            Debug.Log("Get BErry");
+            Destroy(this.gameObject);
         }
 
-        // if (collision.gameObject.CompareTag("Finish"))
-        // {
-        //     Destroy(this.gameObject);
-        // }
+
     }
 
     
