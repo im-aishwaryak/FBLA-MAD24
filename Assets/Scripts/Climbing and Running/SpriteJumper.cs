@@ -41,7 +41,7 @@ public class SpriteJumper : MonoBehaviour
             RB.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse); // Apply upward force to simulate jump
             isGrounded = false; // Set isGrounded to false as the character is in the air now
             jumpCount +=1;
-        } else if (Input.touchCount > 0 && isGrounded){
+        } else if (Input.touchCount > 0 && (jumpCount < 2)){
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Ended){
                 Debug.Log("Touch ended");
