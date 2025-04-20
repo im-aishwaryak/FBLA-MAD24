@@ -398,8 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowball: {fileID: 466698056335501590, guid: 328fa311c5bc6dc4f8449b4d43e7e34e, type: 3}
   MinSpeed: 5
-  MaxSpeed: 15
+  MaxSpeed: 10
   currentSpeed: 5
+  startTime: 45
   SpeedMultiplier: 0.0015
   distanceLeft: {fileID: 521621283}
   logic: {fileID: 0}
@@ -717,7 +718,7 @@ GameObject:
   - component: {fileID: 521621284}
   - component: {fileID: 521621283}
   m_Layer: 5
-  m_Name: DistanceLeft
+  m_Name: TimeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,7 +763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Distance Left: 1000 ft'
+  m_text: 'Time Left: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1173,7 +1174,7 @@ Transform:
   m_GameObject: {fileID: 758444444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.13, y: -3.9576, z: -5}
+  m_LocalPosition: {x: 0.93, y: -3.9576, z: -5}
   m_LocalScale: {x: 1.3882765, y: 1.3882765, z: 1.3882765}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2405,7 +2406,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 3.76
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2429,7 +2430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3210f0fee322343823129653b91ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 15
+  JumpForce: 16
   isGrounded: 1
   pauseCanvas: {fileID: 492291331}
   logic: {fileID: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class LogicScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,6 +13,8 @@ public class LogicScript : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject wonGameScreen;
     public static int level = 0;
+
+    
 
     public QuizManager quizManager;
 

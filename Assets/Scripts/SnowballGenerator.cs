@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using TMPro;
+// import System;
 
 public class SnowballGenerator : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SnowballGenerator : MonoBehaviour
     public float MinSpeed;
     public float MaxSpeed;
     public float currentSpeed;
+    public float startTime = 45;
+
     // public LogicScript logic;
 
     public float SpeedMultiplier;
@@ -19,6 +22,7 @@ public class SnowballGenerator : MonoBehaviour
     public int shardsCollected = 0;
     void Start() {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        // distanceLeft = 
     }
 
     // Start is called before the first frame update
@@ -63,13 +67,17 @@ public class SnowballGenerator : MonoBehaviour
             currentSpeed = 0;
             //end game
             logic.gameWon();
-            distanceLeft.text = "Distance left: 0 ft";
+            distanceLeft.text = "Time Left: 0 seconds";
             Time.timeScale = 0f;
             
         }
 
         if(logic.alive()){
-            distanceLeft.text = "Distance left: " + ((MaxSpeed - currentSpeed)*10) + " ft";
+            // Debug.Log(distanceLeft.text);
+            // Debug.Log("Testing");
+            startTime-=(Time.deltaTime);
+            distanceLeft.text = "Time Left: " + Mathf.FloorToInt(startTime) + " seconds left";
+            Debug.Log("time: " + Time.deltaTime);
         }
 
     }
