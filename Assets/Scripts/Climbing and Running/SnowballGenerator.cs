@@ -17,6 +17,7 @@ public class SnowballGenerator : MonoBehaviour
     public LogicScript logic;
 
     public int shardsCollected = 0;
+    private float time = 55;
     void Start() {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
@@ -32,6 +33,7 @@ public class SnowballGenerator : MonoBehaviour
         // } else {
             generatesnowball();
         // }
+        Debug.Log("start");
         
     }
 
@@ -57,19 +59,23 @@ public class SnowballGenerator : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (currentSpeed < MaxSpeed) {
-            currentSpeed += SpeedMultiplier;
-        } else if (currentSpeed >= MaxSpeed) {
+        
+        if (time <= 0) {
             currentSpeed = 0;
             //end game
             logic.gameWon();
-            distanceLeft.text = "Distance left: 0 ft";
+            distanceLeft.text = "Time Left: 0 seconds";
             Time.timeScale = 0f;
             
         }
 
         if(logic.alive()){
-            distanceLeft.text = "Distance left: " + ((MaxSpeed - currentSpeed)*10) + " ft";
+            Debug.Log(time);
+            // Debug.Log(distanceLeft.text);
+            // Debug.Log("Testing");
+            time-=(Time.deltaTime);
+            distanceLeft.text = "Time Left: " + Mathf.FloorToInt(time) + " seconds left";
+            // Debug.Log("time: " + Time.deltaTime);
         }
 
     }

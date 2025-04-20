@@ -400,7 +400,6 @@ MonoBehaviour:
   MinSpeed: 5
   MaxSpeed: 10
   currentSpeed: 5
-  startTime: 45
   SpeedMultiplier: 0.0015
   distanceLeft: {fileID: 521621283}
   logic: {fileID: 0}
@@ -927,6 +926,52 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &582242865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582242867}
+  - component: {fileID: 582242866}
+  m_Layer: 0
+  m_Name: IngredientSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &582242866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582242865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e0a77f5fb2270488ba7d24b136c2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient: {fileID: 7474029911837557051, guid: a2b377bc08f09c344b9f54a7735dc5f8, type: 3}
+  spawnRate: 2
+--- !u!4 &582242867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582242865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12, y: 1.01, z: 0.00048335688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2267,11 +2312,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1945014108}
-  - component: {fileID: 1945014107}
   - component: {fileID: 1945014110}
   - component: {fileID: 1945014109}
   - component: {fileID: 1945014111}
   - component: {fileID: 1945014112}
+  - component: {fileID: 1945014107}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2340,7 +2385,7 @@ Transform:
   m_GameObject: {fileID: 1945014106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.93, y: -1.03, z: -5}
+  m_LocalPosition: {x: -5.14, y: -0.96, z: -5}
   m_LocalScale: {x: 0.43091857, y: 0.43091857, z: 0.43091857}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2430,10 +2475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3210f0fee322343823129653b91ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 16
+  JumpForce: 12.8
   isGrounded: 1
-  pauseCanvas: {fileID: 492291331}
+  pauseCanvas: {fileID: 0}
   logic: {fileID: 0}
+  jumpCount: 0
 --- !u!114 &1945014112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2443,18 +2489,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945014106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7571c2af743dd74db0b63e050b1fab0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d16cfd54f76fdb4faf6be54fa334c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
-  cornerSprites: []
   walkingSprites:
   - {fileID: 21300000, guid: a15bc92d23e0a2947ab902ca0fff07b5, type: 3}
   - {fileID: 21300000, guid: a3c1aef648e131e4d88b42c4481ebedb, type: 3}
   - {fileID: 21300000, guid: 0398301c078b00842912debea53bd837, type: 3}
   - {fileID: 21300000, guid: a3c1aef648e131e4d88b42c4481ebedb, type: 3}
   spriteRenderer: {fileID: 0}
-  currentSpriteIndex: 0
 --- !u!1 &1962346912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,3 +2806,4 @@ SceneRoots:
   - {fileID: 1299958301}
   - {fileID: 484825441}
   - {fileID: 164898343}
+  - {fileID: 582242867}
