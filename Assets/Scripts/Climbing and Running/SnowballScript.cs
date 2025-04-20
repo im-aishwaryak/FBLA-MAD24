@@ -36,7 +36,7 @@ public class SnowballScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Debug.Log()
-            Debug.Log("Lose stuff!!!");
+            gameLogicData.Instance.loseStuff();
             Destroy(this.gameObject);
         }
 
