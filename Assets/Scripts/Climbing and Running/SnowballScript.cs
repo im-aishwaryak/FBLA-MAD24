@@ -22,6 +22,7 @@ public class SnowballScript : MonoBehaviour
         if(transform.position.x < -14){
             Destroy(this.gameObject);
         }
+        
     }
 
     // Trigger event when the snowball collides with another object
@@ -33,7 +34,7 @@ public class SnowballScript : MonoBehaviour
             gameLogicData.Instance.loseStuff();
             Destroy(this.gameObject);
         }
-        
+
         // Check if the collision object has the tag "nextLine"
         if (collision.gameObject.CompareTag("nextLine"))
         {

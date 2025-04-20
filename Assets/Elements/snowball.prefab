@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1693275265175197937}
   - component: {fileID: 8844301332867921249}
   - component: {fileID: -6342349287865620930}
-  - component: {fileID: 3634681965720320541}
   m_Layer: 0
   m_Name: snowball
   m_TagString: Snowball
@@ -164,38 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballGenerator: {fileID: 0}
   logic: {fileID: 0}
---- !u!58 &3634681965720320541
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466698056335501590}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.7
+  rotationSpeed: 0
