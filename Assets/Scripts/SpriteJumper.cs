@@ -54,7 +54,8 @@ public class SpriteJumper : MonoBehaviour
         if (collision.gameObject.CompareTag("Snowball"))
         {
             // PauseGame(); // Pause the game and show the canvas
-            logic.gameOver();//ends game
+            // logic.gameOver();//ends game
+            gameLogicData.loseStuff();
         }
     }
 
