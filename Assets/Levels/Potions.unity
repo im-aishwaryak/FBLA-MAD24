@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 1095389625}
   - component: {fileID: 1095389624}
   m_Layer: 5
-  m_Name: Text (Legacy) (4)
+  m_Name: Order 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,8 +657,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.010009766, y: -107.09833}
-  m_SizeDelta: {x: 399.8665, y: 1650.5095}
+  m_AnchoredPosition: {x: -0.010009766, y: 600.2}
+  m_SizeDelta: {x: 399.8665, y: 236.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095389624
 MonoBehaviour:
@@ -693,7 +693,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0 Berries and 2 Coconuts Potion
+  m_Text: 'POTION NAME:
+
+    Thorneberries 5$ (x2)'
 --- !u!222 &1095389625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -888,6 +890,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271222145}
   m_CullTransparentMesh: 1
+--- !u!1 &1319669568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319669571}
+  - component: {fileID: 1319669570}
+  - component: {fileID: 1319669569}
+  m_Layer: 0
+  m_Name: LogicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1319669569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319669568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70edde67db199d04e8a9ff5b32db7024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1319669570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319669568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a18b3ccfb6f23645abb6969a1d23ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coins: 0
+  selectedSubject: 
+  gamePaused: 0
+--- !u!4 &1319669571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319669568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1379.1024, y: 804.05646, z: -8.889328}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336624646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,3 +1985,4 @@ SceneRoots:
   - {fileID: 1679403668}
   - {fileID: 1722833475}
   - {fileID: 1070024135}
+  - {fileID: 1319669571}
