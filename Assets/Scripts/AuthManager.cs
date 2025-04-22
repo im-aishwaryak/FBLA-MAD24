@@ -15,11 +15,11 @@ public class AuthManager : MonoBehaviour
     [Header("UI References")]
     public TMP_InputField EmailField;
     public TMP_InputField PasswordField;
+    public TextMeshProUGUI errorText;
+
     void Start()
     {
-        Debug.Log("hola");
         auth = FirebaseAuth.DefaultInstance;
-        Debug.Log("hola");
     }
 
     public void SignUp()
@@ -31,7 +31,12 @@ public class AuthManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Signup Failed: " + task.Exception);
+                FirebaseException firebaseEx = task.Exception?.Flatten().InnerExceptions[0] as FirebaseException;
+                AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+
+                string msg = GetErrorMessage(errorCode);
+                Debug.Log(msg); 
+                ShowError(msg);
                 return;
             }
 
@@ -50,7 +55,11 @@ public class AuthManager : MonoBehaviour
         {
             if (task.IsCanceled || task.IsFaulted)
             {
-                Debug.LogError("Login Failed: " + task.Exception);
+                FirebaseException firebaseEx = task.Exception?.Flatten().InnerExceptions[0] as FirebaseException;
+                AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+
+                string msg = GetErrorMessage(errorCode);
+                ShowError(msg);
                 return;
             }
 
@@ -59,4 +68,30 @@ public class AuthManager : MonoBehaviour
             SceneManager.LoadScene("Home");
         });
     }
+
+    void ShowError(string msg)
+    {
+           errorText.text = msg;
+    }
+
+    string GetErrorMessage(AuthError error)
+    {
+        switch (error)
+        {
+            case AuthError.EmailAlreadyInUse:
+                return "This email is already registered.";
+            case AuthError.InvalidEmail:
+                return "Email is not valid.";
+            case AuthError.WeakPassword:
+                return "Password is too weak.";
+            case AuthError.WrongPassword:
+                return "Incorrect password.";
+            case AuthError.UserNotFound:
+                return "Account not found.";
+            default:
+                return "Unknown error occurred.";
+        }
+    }
+
+
 }
