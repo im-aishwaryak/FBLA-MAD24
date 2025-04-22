@@ -9,6 +9,8 @@ public class ingredientScript : MonoBehaviour
     public LogicScript logic;
     public  SpriteRenderer spriteRenderer;
     public Sprite[] ingredientSprites;
+
+    private int speed = 4;
     private int i = 0;//the index of the ingredient
 
     // Start is called before the first frame update
@@ -22,9 +24,9 @@ public class ingredientScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move the snowball to the left based on the current speed
+        // Move the ingredient based on speed
         if(logic.alive()){
-            transform.Translate(Vector2.left * 3 * Time.deltaTime);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         if(transform.position.x < -14){
             Destroy(gameObject);
