@@ -397,8 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowball: {fileID: 466698056335501590, guid: 328fa311c5bc6dc4f8449b4d43e7e34e, type: 3}
-  MinSpeed: 5
-  MaxSpeed: 10
+  MinSpeed: 6.88
   currentSpeed: 5
   SpeedMultiplier: 0.0015
   distanceLeft: {fileID: 521621283}
