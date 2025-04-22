@@ -9,7 +9,7 @@ public class gameLogicData : MonoBehaviour{
     
     public static gameLogicData Instance; // Singleton reference
 
-    public int playerScore;
+    public int Coins = 0;
     public string selectedSubject;
     public bool gamePaused = false;
     private Dictionary <string, int> inventory = new Dictionary<string, int>(){
