@@ -48,5 +48,6 @@ public class IngredientSpawnScript : MonoBehaviour
         float lowestPoint = transform.position.y - heightOffset;
         float highestPoint = transform.position.y + heightOffset;
         Instantiate(ingredient, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
+        // Debug.Log("Spawn Thing");
     }
 }

@@ -8,7 +8,7 @@ public class SnowballGenerator : MonoBehaviour
 {
     public GameObject snowball;
     public float MinSpeed;
-    public float MaxSpeed;
+    // public float MaxSpeed;
     public float currentSpeed;
     // public LogicScript logic;
 
@@ -40,7 +40,8 @@ public class SnowballGenerator : MonoBehaviour
     public void GenerateNextSnowballWithGap()
     {
         if(logic.alive()){
-            float randomWait = Random.Range(0.1f, 1.2f);
+            float randomWait = Random.Range(0.05f, 2f);
+            Debug.Log("RandomWair: " + randomWait);
             Invoke("generatesnowball", randomWait);
         }
         
