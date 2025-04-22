@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "665253390663",
+    "project_id": "snowpeaksecretsunity",
+    "storage_bucket": "snowpeaksecretsunity.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665253390663:android:8186cc1fa2a6cc40440462",
+        "android_client_info": {
+          "package_name": "com.fbla.snowpeak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7DD4E8sdeBBlFWaGMAz3TDyJTEzZIqNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
