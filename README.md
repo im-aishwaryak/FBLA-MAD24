@@ -1,39 +1,32 @@
 # Snowpeak Secrets
 
-## Overview
-*Snowpeak Secrets* is an educational 2D Unity game designed to engage middle schoolers in an interactive learning experience. Players embark on an exciting journey to the top of a snowy mountain, where they must solve questions related to key concepts in mathematics. As they progress, players collect broken artifact fragments by answering questions correctly, unlocking parts of the story and revealing the mysterious secrets of Snowpeak.
+**Snowpeak Secrets** is a cross-platform mobile application designed to revolutionize learning by gamifying education across a wide range of subjects. Targeting older elementary to high school students who may struggle to find motivation in traditional learning environments, the app fosters creativity, curiosity, and engagement through interactive and immersive gameplay. Built using **Unity** for game development and **Firebase** for backend services, Snowpeak Secrets combines cutting-edge technology with carefully crafted educational content.
 
-## Features
-- **Interactive Gameplay**: The game uses a unique climbing mechanic where the player's character ascends the snowy mountain by pressing the correct key (1, 2, 3, or 4) in response to math-related questions.
-- **Learning through Play**: Aimed at middle school students, *Snowpeak Secrets* integrates math questions within an adventure game framework to boost engagement and reinforce learning.
-- **Progressive Difficulty**: As players ascend the mountain, the questions increase in difficulty, ensuring they are continually challenged while reinforcing their knowledge.
-- **Artifact Discovery**: Players collect broken fragments of ancient artifacts by answering questions correctly, revealing deeper layers of the game’s story.
+## **The Core Premise**
 
-## Gameplay
-1. **Start the Journey**: Players begin at the base of the snowy mountain, ready to climb.
-2. **Answer Questions**: For each segment of the climb, a math question is presented. Players must choose the correct answer by pressing one of the number keys (1, 2, 3, or 4).
-3. **Climb the Mountain**: Each correct answer causes the player's character to climb a step higher on the mountain. Incorrect answers result in no progress.
-4. **Collect Fragments**: Correct answers help uncover pieces of ancient artifacts, leading to a greater understanding of Snowpeak's mysterious past.
+The game introduces players to Sammi, a spirited young explorer who stumbles upon **Edgel Wonk Peak**, a mysterious mountain filled with untold secrets and opportunities. Driven by a desire to learn outside conventional methods, Sammi leaves behind the confines of traditional schooling to pursue her imagination and interests, such as art, history, and exploration. To sustain herself on the mountain, Sammi sets up a shop for tourists, crafting potions from items she collects during nightly explorations. Players take on Sammi's role, balancing shop management with the thrill of adventure.
 
-## Educational Goals
-*Snowpeak Secrets* is designed to help middle school students:
-- Build problem-solving skills
-- Reinforce their understanding of key math concepts
-- Improve knowledge retention through gameplay
+## **Key Gameplay Elements**
 
-## How to Play
-1. Download and run the game on your preferred device.
-2. Start climbing the snowy mountain.
-3. Answer questions correctly to move upwards and collect artifact fragments.
-4. Progress through the mountain as the questions get more challenging.
-5. Collect all fragments to unlock the secrets of Snowpeak.
+1. **Exploration**: Players guide Sammi as she explores the mountain at night, facing challenges and collecting valuable items.
+2. **Education Integration**: To progress along trails on the mountain, players must correctly answer a series of subject-based questions. Each "trail" represents a lesson, broken into smaller "checkpoints" that serve as subsections.
+    - Completing checkpoints unlocks increasingly rare and high-value items for Sammi’s shop.
+    - The lessons are seamlessly tied to the exploration gameplay, making learning part of the adventure.
+3. **Shop Management**: During the day, players help Sammi prepare orders and sell potions crafted from items found on the mountain. Earnings are used to cover her living expenses and purchase upgrades.
+4. **Skill-Building**: Beyond subject knowledge, the game hones practical skills such as:
+    - **Motor Skills**: Through fast-paced item collection and obstacle avoidance.
+    - **Strategic Thinking**: Maximizing shop profits and resource management.
+    - **Ingredient Tracking**: Keeping tabs on inventory and crafting resources.
 
-## Installation Instructions
-1. Download the game files.
-2. Extract the files to a folder on your computer.
-3. Open the *Snowpeak Secrets* project in Unity.
-4. Build and run the project to start playing.
+## **Balance of Gameplay Styles**
+
+Snowpeak Secrets appeals to a broad audience by combining the excitement of fast-paced gaming with the serenity of a creative, story-driven experience. The game avoids gender-specific targeting, ensuring it resonates with players of all demographics.
+
+## **Target Audience and Goals**
+
+The app aims to inspire learners of all ages, particularly those who face barriers to motivation in traditional settings. It seeks to provide an accessible, engaging platform for building subject knowledge and supplemental skills. Credible research on gamification supports its ability to make learning enjoyable and immersive.
 
 ## Credits
 - **Creators**: Aadhya Goyal, Aanya Rawal, Aishwarya Kumaran
-- **Developed using Unity and Flutter**
+
+
