@@ -79,7 +79,12 @@ public class gameLogicData : MonoBehaviour{
     }
 
     public void decrementBerry(string berry){
-        inventory[berry] -= 1;
+        foreach (var key in inventory.Keys)
+        {  
+            Debug.Log("Key in dictionary: '" + key + "' (length: " + key.Length + ")");
+            Debug.Log("Key bytes: " + System.Text.Encoding.UTF8.GetBytes(key));
+        }
+        this.inventory[berry] -= 1;
         // return 0;
     }
 
