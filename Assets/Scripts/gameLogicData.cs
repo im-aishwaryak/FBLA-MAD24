@@ -12,6 +12,7 @@ public class gameLogicData : MonoBehaviour{
     public int Coins = 0;
     public string selectedSubject;
     public bool gamePaused = false;
+    private int ordersTaken = 0;
     private Dictionary <string, int> inventory = new Dictionary<string, int>(){
         {"GoldBerry", 0},
         {"Raspberry", 0},
@@ -53,15 +54,19 @@ public class gameLogicData : MonoBehaviour{
     }
 
     public int getThorneBerries(){
-        return inventory["ThorneBerry"];
+        return inventory["Thorneberry"];
     }
 
     public int getRaspberry(){
-        return inventory["Raspberry"];
+        return inventory["Flareberry"];
     }
 
     public int getGoldBerry(){
-        return inventory["GoldBerry"];
+        return inventory["Goldberry"];
+    }
+
+    public void incrementOrderCount(){
+        ordersTaken++;
     }
 
 }

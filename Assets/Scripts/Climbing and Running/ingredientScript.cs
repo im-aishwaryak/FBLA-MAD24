@@ -41,13 +41,13 @@ public class ingredientScript : MonoBehaviour
             // Debug.Log()
             if(i == 0){
                 //it is a throneberry
-                gameLogicData.Instance.incrementBerry("ThorneBerry");
+                gameLogicData.Instance.incrementBerry("Thorneberry");
             } else if (i == 1){
                 //it is a raspberry
-                gameLogicData.Instance.incrementBerry("Raspberry");
+                gameLogicData.Instance.incrementBerry("Flareberry");
             } else {
                 //it is a goldberry
-                gameLogicData.Instance.incrementBerry("GoldBerry");
+                gameLogicData.Instance.incrementBerry("Goldberry");
 
             }
             Destroy(this.gameObject);
