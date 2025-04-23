@@ -14,9 +14,9 @@ public class gameLogicData : MonoBehaviour{
     public bool gamePaused = false;
     private int ordersTaken = 0;
     private Dictionary <string, int> inventory = new Dictionary<string, int>(){
-        {"GoldBerry", 0},
-        {"Raspberry", 0},
-        {"ThorneBerry", 0}
+        {"Goldberry", 5},
+        {"Flareberry", 5},
+        {"Thorneberry", 6}
     };
 
 
@@ -39,8 +39,6 @@ public class gameLogicData : MonoBehaviour{
         {
             if(inventory[key] > 0){
                 inventory[key] -=1;
-            } else {
-                
             }
         }
     }
@@ -57,7 +55,7 @@ public class gameLogicData : MonoBehaviour{
         return inventory["Thorneberry"];
     }
 
-    public int getRaspberry(){
+    public int getFlareberry(){
         return inventory["Flareberry"];
     }
 
@@ -67,6 +65,22 @@ public class gameLogicData : MonoBehaviour{
 
     public void incrementOrderCount(){
         ordersTaken++;
+    }
+
+    public int getCount(string berry){
+        if(berry.Equals("Goldberry")){
+            return getGoldBerry();
+        } else if (berry.Equals("Flareberry")){
+            return getFlareberry();
+        } else if (berry.Equals("Thorneberry")){
+            return getThorneBerries();
+        }
+        return 0;
+    }
+
+    public void decrementBerry(string berry){
+        inventory[berry] -= 1;
+        // return 0;
     }
 
 }
