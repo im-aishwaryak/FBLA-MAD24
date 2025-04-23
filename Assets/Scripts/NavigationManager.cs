@@ -40,8 +40,18 @@ public class NavigationManager : MonoBehaviour
         SceneManager.LoadScene("Settings"); 
     }
 
+    public void GoToLogin()
+    {
+        SceneManager.LoadScene("Login");
+    }
+
+    public void GoToPotions()
+    {
+        SceneManager.LoadScene("Potions"); 
+    }
     public void QuitGame()
     {
         Application.Quit(); 
     }
+
 }

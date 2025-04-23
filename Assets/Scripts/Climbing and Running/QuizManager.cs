@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
+
 
 public class QuizManager : MonoBehaviour
 {
@@ -9,9 +11,11 @@ public class QuizManager : MonoBehaviour
     public Text scoreText;
     public Text explanationText;  // New Text field for the explanation
 
+    public String subject = SubjectManager.selectedSubject; 
+
     [SerializeField] private CSVReader csvReader; // Reference to CSVReader
     private int currentQuestionIndex = 0 + (15 * LogicScript.level);
-    private int score = 0;
+    private double score = 0;
 
     // Answer button colors
     public Color correctColor = Color.green; // Green for correct answers
@@ -21,12 +25,14 @@ public class QuizManager : MonoBehaviour
     // Controlling other GameObjects
     public SpriteChanger spriteChanger;
     public WallChanger wallChanger;
+    public double questionCount = 0; 
 
 
     void Start()
     {
+
         Debug.Log(csvReader);
-        csvReader.LoadQuestionsFromCSV();
+        csvReader.LoadQuestionsFromCSV(subject);
 
         if (csvReader.questions.Count > 0)
         {
@@ -36,11 +42,13 @@ public class QuizManager : MonoBehaviour
         {
             Debug.LogError("No questions available.");
         }
+        //dialogueManager.ShowDialogue("Answer questions correctly to climb up the mountain! The more you get right, the more time you will have to collect ingredients on top!");
     }
 
 
     void DisplayQuestion()
     {
+        questionCount++; 
         if (csvReader.questions.Count == 0)
         {
             Debug.LogError("No questions available.");
@@ -58,11 +66,13 @@ public class QuizManager : MonoBehaviour
         {
             answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[i];
             int index = i; // Local copy of the index
-            answerButtons[i].onClick.AddListener(() => OnAnswerClicked(index, currentQuestion.correctAnswerIndex, currentQuestion.explanation));
+            answerButtons[i].onClick.AddListener(() =>
+            StartCoroutine(OnAnswerClicked(index, currentQuestion.correctAnswerIndex, currentQuestion.explanation)));
+
         }
     }
 
-    void OnAnswerClicked(int selectedAnswerIndex, int correctAnswerIndex, string explanation)
+    private IEnumerator OnAnswerClicked(int selectedAnswerIndex, int correctAnswerIndex, string explanation)
     {
         // Check if the selected answer is correct
         if (selectedAnswerIndex == correctAnswerIndex)
@@ -70,18 +80,29 @@ public class QuizManager : MonoBehaviour
             score++; // Increase score if correct
             wallChanger.Move(selectedAnswerIndex == correctAnswerIndex);
             spriteChanger.climb(3);
-            //ChangeButtonColorImmediately(answerButtons[selectedAnswerIndex], correctColor);
+            ChangeButtonColorImmediately(answerButtons[selectedAnswerIndex], correctColor);
         }
         else
         {
             wallChanger.Move(selectedAnswerIndex == correctAnswerIndex);
+            ChangeButtonColorImmediately(answerButtons[selectedAnswerIndex], wrongColor);
         }
 
         // Update the score UI
-        scoreText.text = "Correctly Answered - " + score;
+        Debug.Log(score + "/" + questionCount); 
+        double accuracy = Math.Round((score / questionCount) * 100); 
+        scoreText.text = "Accuracy Rate - " + accuracy + "%";
 
         // Display the explanation
         explanationText.text = explanation;
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (Button button in answerButtons)
+        {
+            button.onClick.RemoveAllListeners();
+            ChangeButtonColorImmediately(button, defaultColor);
+        }
 
         // Move to the next question
         currentQuestionIndex++;
@@ -91,23 +112,17 @@ public class QuizManager : MonoBehaviour
         {
             currentQuestionIndex = 0; // Reset to the first question
         }
-
-        // Reset button listeners for the next question
-        foreach (Button button in answerButtons)
-        {
-            button.onClick.RemoveAllListeners();
-            WaitForNextAction(); 
-        }
+     
 
         DisplayQuestion(); // Display the next question
     }
 
 
     
-    private IEnumerator WaitForNextAction()
+    private IEnumerator WaitForNextAction(float time)
     {
         // Wait for 0.5 seconds
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time);
 
         // Do something after waiting
         Debug.Log("Waited 0.5 seconds!");

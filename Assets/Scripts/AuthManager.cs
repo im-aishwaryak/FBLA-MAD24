@@ -8,6 +8,8 @@ using Firebase.Auth;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Firebase.Firestore;
+
 
 public class AuthManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField EmailField;
     public TMP_InputField PasswordField;
     public TextMeshProUGUI errorText;
+    public GameObject ErrorBox; 
 
     void Start()
     {
@@ -42,6 +45,7 @@ public class AuthManager : MonoBehaviour
 
             FirebaseUser newUser = task.Result.User;
             Debug.Log("User created: " + newUser.Email);
+            addToDataBase(newUser); 
             SceneManager.LoadScene("Home");
         });
     }
@@ -71,7 +75,17 @@ public class AuthManager : MonoBehaviour
 
     void ShowError(string msg)
     {
-           errorText.text = msg;
+        
+        errorText.text = msg;
+        ErrorBox.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(HideErrorAfterSeconds(3f));
+    }
+
+    IEnumerator HideErrorAfterSeconds(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ErrorBox.SetActive(false);
     }
 
     string GetErrorMessage(AuthError error)
@@ -89,8 +103,37 @@ public class AuthManager : MonoBehaviour
             case AuthError.UserNotFound:
                 return "Account not found.";
             default:
-                return "Unknown error occurred.";
+                return "Incorrect username or password.";
         }
+    }
+
+    void addToDataBase(FirebaseUser user)
+    {
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        DocumentReference docRef = db.Collection("users").Document(user.Email);
+
+        Dictionary<string, object> userData = new Dictionary<string, object> {
+            { "shopDaysOpen", 1 },
+            { "currentProfit", 0 },
+            { "inventory", new Dictionary<string, object>() },
+            { "orders", new Dictionary<string, object>() },
+            { "trailsCompleted", new List<string>() },
+            { "trailsInProgress", new Dictionary<string, object>() },
+            {"level", 1 }
+    };
+
+        docRef.SetAsync(userData).ContinueWithOnMainThread(initTask =>
+        {
+            if (initTask.IsCompleted)
+            {
+                Debug.Log("User Firestore document created.");
+            }
+            else
+            {
+                Debug.LogError("Failed to create Firestore doc: " + initTask.Exception);
+            }
+        });
+
     }
 
 
