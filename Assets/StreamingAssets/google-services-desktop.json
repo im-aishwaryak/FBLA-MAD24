@@ -7,22 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:665253390663:ios:765cee584f093ea7440462",
+        "mobilesdk_app_id": "1:665253390663:android:8186cc1fa2a6cc40440462",
         "android_client_info": {
           "package_name": "com.fbla.snowpeak"
         }
       },
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDaPadY6CZEiJhzqKpDX1RSPgYX0-X4FBA"
+          "current_key": "AIzaSyB7DD4E8sdeBBlFWaGMAz3TDyJTEzZIqNU"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 0
-        },
         "appinvite_service": {
-          "status": 1
+          "other_platform_oauth_client": []
         }
       }
     }

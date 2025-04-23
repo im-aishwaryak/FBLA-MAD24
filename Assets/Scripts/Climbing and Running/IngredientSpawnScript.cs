@@ -39,7 +39,7 @@ public class IngredientSpawnScript : MonoBehaviour
     }
 
     void updateCount(){
-        inventCount.text = gameLogicData.Instance.getGoldBerry() + "\n" + gameLogicData.Instance.getThorneBerries() + "\n" + gameLogicData.Instance.getRaspberry() + "\n";
+        inventCount.text = gameLogicData.Instance.getGoldBerry() + "\n" + gameLogicData.Instance.getThorneBerries() + "\n" + gameLogicData.Instance.getFlareberry() + "\n";
     }
 
 
