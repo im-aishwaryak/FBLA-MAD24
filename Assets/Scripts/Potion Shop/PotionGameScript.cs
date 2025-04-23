@@ -25,9 +25,17 @@ public class PotionGameScript : MonoBehaviour
     private float timer = 60f;
     private int ordersTaken = 0;
     // private float price;//updates current prices
-    private int i1 = 0;//index for first order
-    private int i2 = 0;//index for second order
-    private int i3 = 0;//index for third order
+    // private int i1 = 0;//index for first order
+    // private int i2 = 0;//index for second order
+    // private int i3 = 0;//index for third order
+
+
+    public Sprite[] ingredients;
+    public Sprite[] potionImgs;
+    public Image imageSlot1;
+    public Image imageSlot2;
+
+
 
     private string SelectedIngredient;
 
@@ -39,12 +47,7 @@ public class PotionGameScript : MonoBehaviour
                              new Potion("Bloodfire Tonic", "Thorneberry", 8, "Flareberry", 15),
                             };
 
-    public Sprite[] ingredients;
-    public Sprite[] potionImgs;
-    public Image imageSlot1;
-    public Image imageSlot2;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,8 @@ public class PotionGameScript : MonoBehaviour
         imageSlot2.enabled = false;
 
     }
+    public string iSlot1;//ingredient in slot 1
+    public string iSlot2;//ingredient in slot 2
 
     // Update is called once per frame
     void Update() {
@@ -115,11 +120,13 @@ public class PotionGameScript : MonoBehaviour
             Debug.Log("Success");
 
             //subtract one from the count of the item
+            Debug.Log("Selected ingredient: '" + SelectedIngredient + "'");
             gameLogicData.Instance.decrementBerry(SelectedIngredient);
             int i = 0;//i stands for index
 
             if(SelectedIngredient.Equals("Goldberry")){
                 i = 0;
+
             } else if(SelectedIngredient.Equals("Flareberry")){
                 i = 2;
             } else if(SelectedIngredient.Equals("Thorneberry")){
@@ -129,11 +136,21 @@ public class PotionGameScript : MonoBehaviour
             //set the component to have that item visible
             if(location.Equals("i1Space") || location.Equals("i1Image")){
                 //if there already is an image, increment that thing
+
+                if(iSlot1 != null){
+                    gameLogicData.Instance.incrementBerry(iSlot1);
+                }
+                iSlot1 = SelectedIngredient;
+
                 
                 Debug.Log("in image");
                 imageSlot1.sprite = ingredients[i];
                 imageSlot1.enabled = true;
             } else {
+                if(iSlot2 != null){
+                    gameLogicData.Instance.incrementBerry(iSlot2);
+                }
+                iSlot2 = SelectedIngredient;
                 Debug.Log("in image setter 2");
                 imageSlot2.sprite = ingredients[i];
                 imageSlot2.enabled = true;
