@@ -26,12 +26,5 @@ public class Dropper : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log(this.name);
             logic.dropAtLocation(this.name);
-
-        // Debug.Log("dropped at this space: " + this.name);
-        // if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began){
-        //     Debug.Log("dropped at this space: " + this.name);
-        //     // logic.setSelectedIngredient(this.name);
-            
-        // }
     }
 }
