@@ -68,7 +68,6 @@ public class CSVReader : MonoBehaviour
             };
 
             // Handle the correct answer index
-            Debug.Log(values[7]); 
             string correctAnswerString = values[7].Trim(); // Correct answer is at index 7
             if (!string.IsNullOrEmpty(correctAnswerString))
             {
