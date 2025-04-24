@@ -32,7 +32,7 @@ public class NavigationManager : MonoBehaviour
 
     public void GoToUserGuide()
     {
-        SceneManager.LoadScene("Instructions"); 
+        Application.OpenURL("https://snowpeak-secrets.netlify.app/instructions.html");
     }
 
     public void GoToSettings()
