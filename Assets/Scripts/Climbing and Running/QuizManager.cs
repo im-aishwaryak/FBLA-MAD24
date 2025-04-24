@@ -11,7 +11,8 @@ public class QuizManager : MonoBehaviour
     public Text scoreText;
     public Text explanationText;  // New Text field for the explanation
 
-    public String subject = SubjectManager.selectedSubject; 
+    public String subject = SubjectManager.selectedSubject;
+    
 
     [SerializeField] private CSVReader csvReader; // Reference to CSVReader
     private int currentQuestionIndex = 0 + (15 * LogicScript.level);
@@ -32,6 +33,7 @@ public class QuizManager : MonoBehaviour
     {
 
         Debug.Log(csvReader);
+        Debug.Log(subject);
         csvReader.LoadQuestionsFromCSV(subject);
 
         if (csvReader.questions.Count > 0)
@@ -56,6 +58,7 @@ public class QuizManager : MonoBehaviour
         }
 
         // Get the current question from CSV
+        Debug.Log(currentQuestionIndex); 
         Question currentQuestion = csvReader.questions[currentQuestionIndex];
 
         // Set the question text
