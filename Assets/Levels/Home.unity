@@ -700,7 +700,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 929681846}
         m_TargetAssemblyTypeName: NavigationManager, Assembly-CSharp
-        m_MethodName: ResumeJourney
+        m_MethodName: GoToTrails
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
