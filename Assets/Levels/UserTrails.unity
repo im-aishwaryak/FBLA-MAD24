@@ -431,7 +431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Start Next Stop: Genetics
+  m_Text: ' Start Next Stop: Ionic Compunds
 
 '
 --- !u!222 &225590650
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6c8c98f644e2da948ba2a2c8a6107184, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e934a0a38e5cef642a51c536eff56dd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3045,7 +3045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Intro to Biology Vocabulary
+  m_Text: 'Chemistry: Basics'
 --- !u!222 &1972229140
 CanvasRenderer:
   m_ObjectHideFlags: 0

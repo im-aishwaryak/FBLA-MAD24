@@ -33,6 +33,7 @@ public class SnowballScript : MonoBehaviour
             // Debug.Log()
             gameLogicData.Instance.loseStuff();
             Destroy(this.gameObject);
+            gameLogicData.Instance.UploadInventoryToFirestore();
         }
 
         // Check if the collision object has the tag "nextLine"

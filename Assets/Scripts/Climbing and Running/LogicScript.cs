@@ -40,7 +40,7 @@ public class LogicScript : MonoBehaviour
     public void nextLevel(){
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         level++; 
-        SceneManager.LoadScene("Quiz");
+        SceneManager.LoadScene("UserTrails");
     }
 
     public int getLevel(){

@@ -52,6 +52,7 @@ public class ingredientScript : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
+        gameLogicData.Instance.UploadInventoryToFirestore(); 
 
 
     }
