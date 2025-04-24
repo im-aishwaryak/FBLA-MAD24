@@ -28,9 +28,9 @@ public class PotionGameScript : MonoBehaviour
     private float timer = 60f;
     private int ordersTaken = 0;
     // private float price;//updates current prices
-    // private int i1 = 0;//index for first order
-    // private int i2 = 0;//index for second order
-    // private int i3 = 0;//index for third order
+    private int i1 = 0;//index for first order
+    private int i2 = 0;//index for second order
+    private int i3 = 0;//index for third order
 
 
     public Sprite[] ingredients;
@@ -66,9 +66,9 @@ public class PotionGameScript : MonoBehaviour
     {
         //start timer
         timer = 60f;//this starts the timer
-        spawnOrder(Order1);
-        spawnOrder(Order2);
-        spawnOrder(Order3);
+        i1 = spawnOrder(Order1);
+        i2 = spawnOrder(Order2);
+        i3 = spawnOrder(Order3);
 
         imageSlot1.enabled = false;
         imageSlot2.enabled = false;
@@ -105,7 +105,7 @@ public class PotionGameScript : MonoBehaviour
     }
 
     //updates the order for the given item
-    private void spawnOrder(Text textBox){
+    private int spawnOrder(Text textBox){
         //pick a random number from 0 to potionLength-1
         int i = Random.Range(0, potions.Length-1);
 
@@ -118,7 +118,7 @@ public class PotionGameScript : MonoBehaviour
                      + potion.getI2Name() + " $" + potion.getI2Price() + " (x" + potion.getI2Count() + ")";
 
 
-        //return the potion
+        return i;
     }
 
     public void setSelectedIngredient(string str){
@@ -216,6 +216,35 @@ public class PotionGameScript : MonoBehaviour
         //first you want to check if it is a valid potion
 
         //you can do this by looking through the orders, comparing the recipies of them to what they have
+        if(checkPotion(i1)){
+            //it matches potion 1
+            //calculate rewards
+        } else if(checkPotion(i2)){
+            //it matches potion 2
+            //calculate rewards
+        } else if(checkPotion(i3)){
+            //it matches potion 3
+            //calculate rewards
+        }
         
+        
+    }
+
+    private bool checkPotion(int i){
+        // bool output = false;
+        if(potions[i].getI1Name().Equals(slots[0].getName()) && potions[i].getI2Name().Equals(slots[1].getName()) && (potions[i].getI1Count() == slots[0].getCount() && potions[i].getI2Count() == slots[1].getCount())){
+            return true; 
+        } else if(potions[i].getI1Name().Equals(slots[1].getName()) && potions[i].getI2Name().Equals(slots[0].getName()) && (potions[i].getI1Count() == slots[1].getCount() && potions[i].getI2Count() == slots[0].getCount())){
+            return true;
+        }
+        return false;
+    }
+
+    private void calculateRewards(int i){
+        Potion potion = potions[i];
+
+        gameLogicData.Instance.incrementCoins((int)potion.getSellingPrice());
+        gameLogicData.Instance.incrementOrderCount();
+
     }
 }

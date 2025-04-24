@@ -131,5 +131,13 @@ public class gameLogicData : MonoBehaviour{
         }
     }
 
+    public void incrementBerry(string berryName, int count){
+        inventory[berryName] += count;
+    }
+
+    public void incrementCoins(int count){
+        Coins += count;
+    }
+
 
 }
