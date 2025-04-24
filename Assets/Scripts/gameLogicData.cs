@@ -18,9 +18,9 @@ public class gameLogicData : MonoBehaviour{
     public bool gamePaused = false;
     private int ordersTaken = 0;
     private Dictionary <string, int> inventory = new Dictionary<string, int>(){
-        {"Goldberry", 5},
-        {"Flareberry", 5},
-        {"Thorneberry", 6}
+        {"Goldberry", 20},
+        {"Flareberry", 20},
+        {"Thorneberry", 20}
     };
 
 
@@ -137,6 +137,10 @@ public class gameLogicData : MonoBehaviour{
 
     public void incrementCoins(int count){
         Coins += count;
+    }
+
+    public int getOrdersTaken(){
+        return ordersTaken;
     }
 
 
