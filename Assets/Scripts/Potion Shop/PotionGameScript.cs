@@ -218,14 +218,15 @@ public class PotionGameScript : MonoBehaviour
         //you can do this by looking through the orders, comparing the recipies of them to what they have
         if(checkPotion(i1)){
             //it matches potion 1
-            //calculate rewards
+            calculateRewards(i1);
         } else if(checkPotion(i2)){
             //it matches potion 2
-            //calculate rewards
+            calculateRewards(i2);
         } else if(checkPotion(i3)){
             //it matches potion 3
-            //calculate rewards
+            calculateRewards(i3);
         }
+        
         
         
     }
@@ -245,6 +246,20 @@ public class PotionGameScript : MonoBehaviour
 
         gameLogicData.Instance.incrementCoins((int)potion.getSellingPrice());
         gameLogicData.Instance.incrementOrderCount();
+
+        //reset stuff
+        slots[0] = new Ingredient("", 0);
+        slots[1] = new Ingredient("", 0);
+
+        imageSlot1.enabled = false;
+        imageSlot2.enabled = false;
+
+        i1 = spawnOrder(Order1);
+        i2 = spawnOrder(Order2);
+        i3 = spawnOrder(Order3);
+        
+        timer = 60;
+        orderCounter.text = "Orders Taken: " + gameLogicData.Instance.getOrdersTaken();
 
     }
 }
