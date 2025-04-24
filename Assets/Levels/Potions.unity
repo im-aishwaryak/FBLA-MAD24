@@ -1558,6 +1558,8 @@ MonoBehaviour:
   potionImgs: []
   imageSlot1: {fileID: 1024913883}
   imageSlot2: {fileID: 850951475}
+  iSlot1: 
+  iSlot2: 
 --- !u!114 &1319669570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2828,7 +2830,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1070024136}
         m_TargetAssemblyTypeName: NavigationManager, Assembly-CSharp
-        m_MethodName: GoToTrails
+        m_MethodName: GoToShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
