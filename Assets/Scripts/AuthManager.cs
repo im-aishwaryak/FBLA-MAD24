@@ -73,6 +73,11 @@ public class AuthManager : MonoBehaviour
         });
     }
 
+    public void LoginWithGoogle()
+    {
+
+    }
+
     void ShowError(string msg)
     {
         
