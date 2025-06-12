@@ -26,17 +26,8 @@ public class Selector : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         logic.setSelectedIngredient(this.name);
-        // // Debug.Log("Pointer Clicked on: " + gameObject.name);
-        // if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began){
-        //     // Debug.
-            
-        //     Debug.Log("Picked up this ingredient: " + this.name);
-        // }
+        
     }
-//     public void OnPointerClick(PointerEventData eventData)
-//     {
-//         Debug.Log("Pointer Clicked on: " + gameObject.name);
-//     }
 
 
 }

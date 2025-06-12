@@ -4,6 +4,7 @@ using System.Collections;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using TMPro;
 using UnityEditor.UI;
+using System.Collections.Generic;
 
 
 
@@ -19,6 +20,8 @@ public class PotionGameScript : MonoBehaviour
     public Text TBCount;//Thorneberrycount text
     public Text FBCount;//FlareberryCount text
     public Text GBCount;//Goldberry text
+    public Text slot1Txt;//slot 1 count of item
+    public Text slot2Txt;//slot 2 count of item
 
 
     //variables in game
@@ -28,6 +31,14 @@ public class PotionGameScript : MonoBehaviour
     private int i1 = 0;//index for first order
     private int i2 = 0;//index for second order
     private int i3 = 0;//index for third order
+
+
+    public Sprite[] ingredients;
+    public Sprite[] potionImgs;
+    public Image imageSlot1;
+    public Image imageSlot2;
+
+
 
     private string SelectedIngredient;
 
@@ -50,9 +61,9 @@ public class PotionGameScript : MonoBehaviour
     {
         //start timer
         timer = 60f;//this starts the timer
-        spawnOrder(Order1);
-        spawnOrder(Order2);
-        spawnOrder(Order3);
+        i1 = spawnOrder(Order1);
+        i2 = spawnOrder(Order2);
+        i3 = spawnOrder(Order3);
 
         imageSlot1.enabled = false;
         imageSlot2.enabled = false;
@@ -82,11 +93,14 @@ public class PotionGameScript : MonoBehaviour
         FBCount.text = gameLogicData.Instance.getFlareberry() + "";
         GBCount.text = gameLogicData.Instance.getGoldBerry() + "";
         TBCount.text = gameLogicData.Instance.getThorneBerries() + "";
+
+        slot1Txt.text = slots[0].getCount() + "";
+        slot2Txt.text = slots[1].getCount() + "";
         
     }
 
     //updates the order for the given item
-    private void spawnOrder(Text textBox){
+    private int spawnOrder(Text textBox){
         //pick a random number from 0 to potionLength-1
         int i = Random.Range(0, potions.Length-1);
 
@@ -99,7 +113,7 @@ public class PotionGameScript : MonoBehaviour
                      + potion.getI2Name() + " $" + potion.getI2Price() + " (x" + potion.getI2Count() + ")";
 
 
-        //return the potion
+        return i;
     }
 
     public void setSelectedIngredient(string str){
@@ -109,10 +123,9 @@ public class PotionGameScript : MonoBehaviour
     }
 
     public void dropAtLocation(string location){
-        Debug.Log("Bob");
+        // Debug.Log("Bob");
         if(SelectedIngredient != null && gameLogicData.Instance.getCount(SelectedIngredient) > 0){
             //success
-            Debug.Log("Success");
 
             //subtract one from the count of the item
             gameLogicData.Instance.decrementBerry(SelectedIngredient);
@@ -128,12 +141,60 @@ public class PotionGameScript : MonoBehaviour
 
             //set the component to have that item visible
             if(location.Equals("i1Space") || location.Equals("i1Image")){
-                //if there already is an image, increment that thing
+                //check if the first slot has not ingredient saved
+                if(slots[0].getName() == null || slots[0].getName().Equals("")){
+                    Debug.Log("iSlot1 is null");
+
+                    //this means that this is the first ingredient that is being placed
+                    slots[0].setName(SelectedIngredient);//updates the name of the ingredient
+                    slots[0].setCount(1);
+
+                } else if (slots[0].getName().Equals(SelectedIngredient)){
+                    //this means that the ingredient is the same
+                    slots[0].setCount(slots[0].getCount()+1);//increment the count
+                } else if (!slots[0].getName().Equals(SelectedIngredient)){
+                    //this means that the ingredient has changed.
+
+                    int tempCount = slots[0].getCount();
+                    string name = slots[0].getName();
+
+                    //update the inventory to have those berries
+                    gameLogicData.Instance.incrementBerry(name, tempCount);
+
+                    //update the actual thing to be 1 with the new name
+                    slots[0].setName(SelectedIngredient);
+                    slots[0].setCount(1);
+                }
+
                 
                 Debug.Log("in image");
                 imageSlot1.sprite = ingredients[i];
                 imageSlot1.enabled = true;
             } else {
+                //check if the first slot has not ingredient saved
+                if(slots[1].getName() == null || slots[1].getName().Equals("")){
+                    // Debug.Log("iSlot1 is null");
+
+                    //this means that this is the first ingredient that is being placed
+                    slots[1].setName(SelectedIngredient);//updates the name of the ingredient
+                    slots[1].setCount(1);
+
+                } else if (slots[1].getName().Equals(SelectedIngredient)){
+                    //this means that the ingredient is the same
+                    slots[1].setCount(slots[1].getCount()+1);//increment the count
+                } else if (!slots[1].getName().Equals(SelectedIngredient)){
+                    //this means that the ingredient has changed.
+
+                    int tempCount = slots[1].getCount();
+                    string name = slots[1].getName();
+
+                    //update the inventory to have those berries
+                    gameLogicData.Instance.incrementBerry(name, tempCount);
+
+                    //update the actual thing to be 1 with the new name
+                    slots[1].setName(SelectedIngredient);
+                    slots[1].setCount(1);
+                }
                 Debug.Log("in image setter 2");
                 imageSlot2.sprite = ingredients[i];
                 imageSlot2.enabled = true;
@@ -141,5 +202,58 @@ public class PotionGameScript : MonoBehaviour
             // imageSlot.sprite = ingredients[index]
             // imageSlot.enabled = true;
         }
+    }
+
+    public void shipPotion(){
+        //this is the potion that ships the potion
+
+        //first you want to check if it is a valid potion
+
+        //you can do this by looking through the orders, comparing the recipies of them to what they have
+        if(checkPotion(i1)){
+            //it matches potion 1
+            calculateRewards(i1);
+        } else if(checkPotion(i2)){
+            //it matches potion 2
+            calculateRewards(i2);
+        } else if(checkPotion(i3)){
+            //it matches potion 3
+            calculateRewards(i3);
+        }
+        
+        
+        
+    }
+
+    private bool checkPotion(int i){
+        // bool output = false;
+        if(potions[i].getI1Name().Equals(slots[0].getName()) && potions[i].getI2Name().Equals(slots[1].getName()) && (potions[i].getI1Count() == slots[0].getCount() && potions[i].getI2Count() == slots[1].getCount())){
+            return true; 
+        } else if(potions[i].getI1Name().Equals(slots[1].getName()) && potions[i].getI2Name().Equals(slots[0].getName()) && (potions[i].getI1Count() == slots[1].getCount() && potions[i].getI2Count() == slots[0].getCount())){
+            return true;
+        }
+        return false;
+    }
+
+    private void calculateRewards(int i){
+        Potion potion = potions[i];
+
+        gameLogicData.Instance.incrementCoins((int)potion.getSellingPrice());
+        gameLogicData.Instance.incrementOrderCount();
+
+        //reset stuff
+        slots[0] = new Ingredient("", 0);
+        slots[1] = new Ingredient("", 0);
+
+        imageSlot1.enabled = false;
+        imageSlot2.enabled = false;
+
+        i1 = spawnOrder(Order1);
+        i2 = spawnOrder(Order2);
+        i3 = spawnOrder(Order3);
+        
+        timer = 60;
+        orderCounter.text = "Orders Taken: " + gameLogicData.Instance.getOrdersTaken();
+
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using static UnityEngine.RuleTile.TilingRuleOutput;
-
+using UnityEngine.SceneManagement;
 public class WallChanger : MonoBehaviour
 {
     public float moveForce = 10f;          // Force applied to the wall for each movement
@@ -97,7 +97,14 @@ public class WallChanger : MonoBehaviour
         }
 
        spriteChanger.climbCorner();
+       StartCoroutine(TransitionAfterDelay());
 
-       // Application.Quit(); // Stops the program
+        // Application.Quit(); // Stops the program
+    }
+
+    private IEnumerator TransitionAfterDelay()
+    {
+        yield return new WaitForSeconds(4f); // Give sprite time to animate
+        SceneManager.LoadScene("DinoRun");
     }
 }

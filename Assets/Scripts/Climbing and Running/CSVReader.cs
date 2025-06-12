@@ -13,22 +13,26 @@ public class Question
 
 public class CSVReader : MonoBehaviour
 {
-    public TextAsset csvFile; // Assign the CSV file in the Inspector
+    //public TextAsset csvFile; // Assign the CSV file in the Inspector
+
     public List<Question> questions = new List<Question>();
 
+
     // Start is called before the first frame update
-    void Awake()
-    {
-        LoadQuestionsFromCSV();
-    }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
 
-    public void LoadQuestionsFromCSV()
+    public void LoadQuestionsFromCSV(string filename)
     {
+        TextAsset csvFile = Resources.Load<TextAsset>(filename);
+        if (csvFile == null)
+        {
+            Debug.Log("CSV File Not Found: " + filename);
+            return;
+        }
+
+        questions.Clear();
+
         // Split CSV by new line, remove any empty entries
         string[] lines = csvFile.text.Split(new[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
 
@@ -43,7 +47,7 @@ public class CSVReader : MonoBehaviour
 
         for (int i = 1; i < lines.Length; i++) // Start from 1 to skip header if there is one
         {
-            string[] values = lines[i].Split(',');
+            string[] values = lines[i].Trim().Split(',');
 
             // Skip incomplete rows
             if (values.Length < 9)  // We need at least 9 columns
@@ -70,7 +74,7 @@ public class CSVReader : MonoBehaviour
                 // Try to parse the correct answer index, log an error if it fails
                 if (int.TryParse(correctAnswerString, out int correctIndex))
                 {
-                    question.correctAnswerIndex = correctIndex - 1; // Adjust for zero-based indexing
+                    question.correctAnswerIndex = correctIndex-1; // Adjust for zero-based indexing
                 }
                 else
                 {

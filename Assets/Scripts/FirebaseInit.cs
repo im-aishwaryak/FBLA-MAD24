@@ -4,9 +4,11 @@ using UnityEngine;
 
 using Firebase;
 using Firebase.Extensions;
+using Firebase.Firestore;
 
 public class FirebaseInit : MonoBehaviour
 {
+    FirebaseFirestore firestore; 
     void Awake()
     {
         if (FindObjectsOfType<FirebaseInit>().Length > 1)
@@ -24,6 +26,9 @@ public class FirebaseInit : MonoBehaviour
                 var app = Firebase.FirebaseApp.DefaultInstance;
                 Debug.Log("Firebase is ready to go!");
                 // Now you can safely use FirebaseAuth and other services
+
+                firestore = FirebaseFirestore.DefaultInstance;
+                Debug.Log("Firestore is ready to go!");
             }
             else
             {

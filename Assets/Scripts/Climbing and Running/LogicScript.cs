@@ -39,7 +39,8 @@ public class LogicScript : MonoBehaviour
 
     public void nextLevel(){
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene("Part 1");
+        level++; 
+        SceneManager.LoadScene("UserTrails");
     }
 
     public int getLevel(){
