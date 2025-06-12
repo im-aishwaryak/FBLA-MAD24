@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Levels/Library.unity
     guid: ec3783ab666aa12459fc94fdfaa85d6b
   - enabled: 1
-    path: Assets/Levels/Instructions.unity
+    path: Assets/Levels/ProgressTracking.unity
     guid: 2d3c30b56a1a24f47818d4fd15050382
   - enabled: 1
     path: Assets/Levels/Dashboard.unity
