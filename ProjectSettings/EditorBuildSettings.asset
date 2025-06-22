@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Levels/Login.unity
+    guid: 3d5a72f845df78e4eb74a9b901cc69d3
+  - enabled: 1
+    path: Assets/Levels/Home.unity
+    guid: 4fcc8c119676646498bce5e9421183a2
+  - enabled: 1
     path: Assets/Levels/Quiz.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Levels/DinoRun.unity
     guid: 84edce37cea32d248925f3ec9636a8d4
-  - enabled: 1
-    path: Assets/Levels/Home.unity
-    guid: 4fcc8c119676646498bce5e9421183a2
   - enabled: 0
     path: Assets/Levels/ProfileScreen.unity
     guid: 01121fce3505b1e48a88d8b9b6092d83
