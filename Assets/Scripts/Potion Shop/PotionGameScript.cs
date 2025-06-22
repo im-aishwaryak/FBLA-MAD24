@@ -42,7 +42,7 @@ public class PotionGameScript : MonoBehaviour
 
     private string SelectedIngredient;
 
-    private Potion[] potions = 
+    private Potion[] potions =
                             {new Potion("Brew of Serenity", "Goldberry", 5, "Thorneberry", 4),
                              new Potion("Earthroot Draught", "Thorneberry", 6, "Flareberry", 3),
                              new Potion("Springbrew Tonic", "Goldberry", 6, "Flareberry", 4),
@@ -50,11 +50,12 @@ public class PotionGameScript : MonoBehaviour
                              new Potion("Bloodfire Tonic", "Thorneberry", 8, "Flareberry", 15),
                             };
 
-    public Sprite[] ingredients;
-    public Sprite[] potionImgs;
-    public Image imageSlot1;
-    public Image imageSlot2;
+    // public Sprite[] ingredients;
+    // public Sprite[] potionImgs;
+    // public Image imageSlot1;
+    // public Image imageSlot2;
 
+    private Ingredient[] slots = {new Ingredient ("", 0), new Ingredient("", 0)};
 
     // Start is called before the first frame update
     void Start()
