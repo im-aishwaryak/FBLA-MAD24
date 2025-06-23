@@ -46,7 +46,7 @@ public class AuthManager : MonoBehaviour
             FirebaseUser newUser = task.Result.User;
             Debug.Log("User created: " + newUser.Email);
             addToDataBase(newUser); 
-            SceneManager.LoadScene("Home");
+            SceneManager.LoadScene("Intro");
         });
     }
 
