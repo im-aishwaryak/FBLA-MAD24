@@ -6,38 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class NavigationManager : MonoBehaviour
 {
+    public void GoToBackpack()
+    {
+        SceneManager.LoadScene("Backpack");
+    }
+
+    public void GoToDashboard()
+    {
+        SceneManager.LoadScene("Dashboard");
+    }
+
+    public void GoToDinoRun()
+    {
+        SceneManager.LoadScene("DinoRun");
+    }
+
     public void GoToHome()
     {
-        SceneManager.LoadScene("Home"); 
-    }
-    public void ResumeJourney()
-    {
-        SceneManager.LoadScene("Quiz"); 
+        SceneManager.LoadScene("Home");
     }
 
-    public void GoToTrails()
+    public void GoToIntro()
     {
-        SceneManager.LoadScene("UserTrails"); 
-    }
-
-    public void GoToShop()
-    {
-        SceneManager.LoadScene("Dashboard"); 
+        SceneManager.LoadScene("Intro");
     }
 
     public void GoToLibrary()
     {
-        SceneManager.LoadScene("Library"); 
-    }
-
-    public void GoToUserGuide()
-    {
-        Application.OpenURL("https://snowpeak-secrets.netlify.app/instructions.html");
-    }
-
-    public void GoToSettings()
-    {
-        SceneManager.LoadScene("Settings"); 
+        SceneManager.LoadScene("Library");
     }
 
     public void GoToLogin()
@@ -47,7 +43,42 @@ public class NavigationManager : MonoBehaviour
 
     public void GoToPotions()
     {
-        SceneManager.LoadScene("Potions"); 
+        SceneManager.LoadScene("Potions");
+    }
+
+    public void GoToPotionShop()
+    {
+        SceneManager.LoadScene("PotionShop");
+    }
+
+    public void GoToProgress()
+    {
+        SceneManager.LoadScene("Progress");
+    }
+
+    public void GoToProgressTracking()
+    {
+        SceneManager.LoadScene("ProgressTracking");
+    }
+
+    public void GoToQuiz()
+    {
+        SceneManager.LoadScene("Quiz");
+    }
+
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    public void GoToUserGuide()
+    {
+        SceneManager.LoadScene("UserGuide");
+    }
+
+    public void GoToUserTrails()
+    {
+        SceneManager.LoadScene("UserTrails");
     }
     public void QuitGame()
     {
