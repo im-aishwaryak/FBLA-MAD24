@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,7 +13,6 @@ public class SubjectButtonHandler : MonoBehaviour
     void Start()
     {
 
-
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class SubjectButtonHandler : MonoBehaviour
 
     public void setSubject()
     {
+        UnityEngine.Debug.Log("when clicked subject is " + subjectName); 
         SubjectManager.onSubjectSelected(subjectName); 
     }
 }

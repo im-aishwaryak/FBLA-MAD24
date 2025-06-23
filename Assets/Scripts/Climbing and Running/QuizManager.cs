@@ -11,7 +11,7 @@ public class QuizManager : MonoBehaviour
     public Text scoreText;
     public Text explanationText;  // New Text field for the explanation
 
-    public String subject = SubjectManager.selectedSubject;
+  
     
 
     [SerializeField] private CSVReader csvReader; // Reference to CSVReader
@@ -26,14 +26,15 @@ public class QuizManager : MonoBehaviour
     // Controlling other GameObjects
     public SpriteChanger spriteChanger;
     public WallChanger wallChanger;
-    public double questionCount = 0; 
+    public double questionCount = 0;
 
-
+    public string subject; 
     void Start()
     {
+        subject = SubjectManager.selectedSubject;
 
         Debug.Log(csvReader);
-        Debug.Log(subject);
+        Debug.Log("Subject = " + subject);
         csvReader.LoadQuestionsFromCSV(subject);
 
         if (csvReader.questions.Count > 0)
