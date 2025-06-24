@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 39075234}
   - component: {fileID: 39075233}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: CurrentBalance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,16 +147,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39075231}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -664.27, y: -512}
+  m_AnchoredPosition: {x: -465.9348, y: -45.54474}
   m_SizeDelta: {x: 577.4283, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &39075233
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 88530475}
   - component: {fileID: 88530474}
   m_Layer: 5
-  m_Name: Text (Legacy) (7)
+  m_Name: CurrentBalanceVal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,16 +360,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88530472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -340.02246, y: -509.90002}
+  m_AnchoredPosition: {x: -141.68726, y: -43.444763}
   m_SizeDelta: {x: 191.4784, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &88530474
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 306286974}
   - component: {fileID: 306286973}
   m_Layer: 5
-  m_Name: PotionShop (1)
+  m_Name: Backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 340893408}
   - component: {fileID: 340893407}
   m_Layer: 5
-  m_Name: YourTrails (1)
+  m_Name: ViewProgress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 396593822}
   - component: {fileID: 396593821}
   m_Layer: 5
-  m_Name: Text (Legacy) (6)
+  m_Name: PotionsStockVal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,16 +839,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396593819}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 429.5351, y: -513.9}
+  m_AnchoredPosition: {x: 627.8703, y: -47.444763}
   m_SizeDelta: {x: 224.9456, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396593821
@@ -1659,7 +1659,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 645638334}
+  - {fileID: 1695341040}
+  - {fileID: 1567900657}
+  - {fileID: 1184349288}
+  - {fileID: 1443425529}
+  - {fileID: 396593820}
+  - {fileID: 39075232}
+  - {fileID: 88530473}
   m_Father: {fileID: 1359667170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1717,7 +1725,7 @@ GameObject:
   - component: {fileID: 645638336}
   - component: {fileID: 645638335}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TrailsCompleted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1730,16 +1738,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645638333}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -664.27264, y: -426.1}
+  m_AnchoredPosition: {x: -465.93744, y: 40.355286}
   m_SizeDelta: {x: 577.4283, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645638335
@@ -1840,7 +1848,7 @@ GameObject:
   - component: {fileID: 1184349290}
   - component: {fileID: 1184349289}
   m_Layer: 5
-  m_Name: Text (Legacy) (5)
+  m_Name: PotionsSoldVal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1853,16 +1861,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184349287}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 429.5351, y: -428}
+  m_AnchoredPosition: {x: 627.8703, y: 38.45526}
   m_SizeDelta: {x: 224.9456, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184349289
@@ -2206,21 +2214,13 @@ RectTransform:
   m_Children:
   - {fileID: 929681847}
   - {fileID: 1497687991}
-  - {fileID: 579847125}
-  - {fileID: 1203695497}
-  - {fileID: 306286972}
-  - {fileID: 2026896595}
-  - {fileID: 340893406}
   - {fileID: 469332637}
+  - {fileID: 579847125}
+  - {fileID: 306286972}
+  - {fileID: 1203695497}
+  - {fileID: 340893406}
+  - {fileID: 2026896595}
   - {fileID: 624680509}
-  - {fileID: 645638334}
-  - {fileID: 1567900657}
-  - {fileID: 1443425529}
-  - {fileID: 1695341040}
-  - {fileID: 1184349288}
-  - {fileID: 396593820}
-  - {fileID: 88530473}
-  - {fileID: 39075232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2278,7 +2278,7 @@ GameObject:
   - component: {fileID: 1443425531}
   - component: {fileID: 1443425530}
   m_Layer: 5
-  m_Name: Text (Legacy) (3)
+  m_Name: PotionsStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,16 +2291,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443425528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106.002625, y: -512}
+  m_AnchoredPosition: {x: 304.33783, y: -45.54474}
   m_SizeDelta: {x: 577.4283, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443425530
@@ -2432,7 +2432,7 @@ GameObject:
   - component: {fileID: 1567900659}
   - component: {fileID: 1567900658}
   m_Layer: 5
-  m_Name: Text (Legacy) (2)
+  m_Name: PotionsSold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2445,16 +2445,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567900656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106, y: -426.1}
+  m_AnchoredPosition: {x: 304.3352, y: 40.355286}
   m_SizeDelta: {x: 577.4283, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567900658
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 1695341042}
   - component: {fileID: 1695341041}
   m_Layer: 5
-  m_Name: Text (Legacy) (4)
+  m_Name: TrailsCompletedVal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2524,16 +2524,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695341039}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2058518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359667170}
+  m_Father: {fileID: 624680509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -340.02332, y: -424}
+  m_AnchoredPosition: {x: -141.68811, y: 42.45526}
   m_SizeDelta: {x: 191.4784, y: 71.5263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695341041
