@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Levels/ProfileScreen.unity
     guid: 01121fce3505b1e48a88d8b9b6092d83
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/ShopScreen.unity
     guid: 7aa18a7c71436eb4c923f98cb74a5bc0
   - enabled: 1
@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Library.unity
     guid: ec3783ab666aa12459fc94fdfaa85d6b
+  - enabled: 1
+    path: Assets/Levels/Intro.unity
+    guid: d0a7d8851cffe7e4e8f41c747f4f34dd
   - enabled: 1
     path: Assets/Levels/ProgressTracking.unity
     guid: 2d3c30b56a1a24f47818d4fd15050382
