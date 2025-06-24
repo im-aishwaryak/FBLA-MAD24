@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using TMPro;
-using UnityEditor.UI;
+//using UnityEditor.UI;
 using System.Collections.Generic;
 
 
