@@ -80,9 +80,14 @@ public class NavigationManager : MonoBehaviour
     {
         SceneManager.LoadScene("UserTrails");
     }
+
+    public void GoToViewQuestions()
+    {
+        SceneManager.LoadScene("ViewQuestions");
+    }
     public void QuitGame()
     {
-        Application.Quit(); 
+        Application.Quit();
     }
 
 }

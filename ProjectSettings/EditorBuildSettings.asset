@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Levels/Login.unity
     guid: 3d5a72f845df78e4eb74a9b901cc69d3
   - enabled: 1
+    path: Assets/Levels/Intro.unity
+    guid: d0a7d8851cffe7e4e8f41c747f4f34dd
+  - enabled: 1
     path: Assets/Levels/Home.unity
     guid: 4fcc8c119676646498bce5e9421183a2
   - enabled: 1
@@ -23,25 +26,40 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Levels/ShopScreen.unity
     guid: 7aa18a7c71436eb4c923f98cb74a5bc0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/UserTrails.unity
     guid: eaa7319db60c5b04a9cc0cb2fc56670f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/Settings.unity
     guid: 20d8b7e460b3fd046911d1b799042b0a
   - enabled: 1
     path: Assets/Levels/Potions.unity
     guid: b35bc82dcefd9334b9a02df592ca4b64
   - enabled: 1
+    path: Assets/Levels/PotionShop.unity
+    guid: d09684cea4d1dc942b27d98689f16172
+  - enabled: 1
     path: Assets/Levels/Library.unity
     guid: ec3783ab666aa12459fc94fdfaa85d6b
   - enabled: 1
-    path: Assets/Levels/Intro.unity
-    guid: d0a7d8851cffe7e4e8f41c747f4f34dd
-  - enabled: 1
-    path: Assets/Levels/ProgressTracking.unity
+    path: Assets/Levels/UserGuide.unity
     guid: 2d3c30b56a1a24f47818d4fd15050382
   - enabled: 1
     path: Assets/Levels/Dashboard.unity
     guid: 86be4211f4b39fb4b9870369f613ddcc
+  - enabled: 0
+    path: Assets/Levels/ProgressTracking.unity
+    guid: 56ce814211a692f46962898cb57f24dc
+  - enabled: 1
+    path: Assets/Levels/Backpack.unity
+    guid: 24610ac7397a1ba40b07ac0206417c3c
+  - enabled: 1
+    path: Assets/Levels/QuestionBreakdown.unity
+    guid: 3d08353dc04a35e4290628ea1d8c3825
+  - enabled: 1
+    path: Assets/Levels/Progress.unity
+    guid: 6add2f81ca34a4245bbb30e5f5273793
+  - enabled: 1
+    path: Assets/Levels/ViewQuestions.unity
+    guid: f219638ceedeb064296afe8fdd4547c6
   m_configObjects: {}
