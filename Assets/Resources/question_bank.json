@@ -1,61 +1,415 @@
 {
-    "lessons": [
-      {
-        "title": "Lesson Title",
-        "description": "Brief description of the lesson.",
-        "subject": "Subject Name",
-        "creator": "SPS Question Makers",
-        "checkpoints": [
-          {
-            "name": "Checkpoint 1",
-            "question_count": 10,
-            "checkpoint_number": 1,
-            "questions": [
-              {
-                "question_number": 1,
-                "question": "What is the capital of France?",
-                "answers": [
-                  "Berlin",
-                  "Madrid",
-                  "Paris",
-                  "Rome"
-                ],
-                "correct_answer_index": 2,
-                "explanation": "Paris is the capital of France."
-              },
-              {
-                "question_number": 2,
-                "question": "Which planet is known as the Red Planet?",
-                "answers": [
-                  "Earth",
-                  "Mars",
-                  "Venus",
-                  "Jupiter"
-                ],
-                "correct_answer_index": 1,
-                "explanation": "Mars is called the Red Planet due to its reddish appearance."
-              }
-            ]
-          },
-          {
-            "name": "Checkpoint 2",
-            "checkpoint_number": 2,
-            "questions": [
-              {
-                "question_number": 11,
-                "question": "What is the largest mammal on Earth?",
-                "answers": [
-                  "Elephant",
-                  "Blue Whale",
-                  "Giraffe",
-                  "Shark"
-                ],
-                "correct_answer_index": 1,
-                "explanation": "The Blue Whale is the largest mammal on Earth."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "trails": [
+    {
+      "trailID": "bio01",
+      "title": "Biology Basics",
+      "desc": "Explore the wonders of living things, from animals and plants to cells and life cycles.",
+      "subject": "science",
+      "grade": "Elementary",
+      "checkpoints": [
+        {
+          "title": "Living vs. Nonliving",
+          "desc": "Learn how to tell what’s alive and what’s not.",
+          "questions": [
+            {
+              "question": "Which of these is a living thing?",
+              "answers": ["Rock", "Tree", "Water", "Cloud"],
+              "correctAnswer": 1,
+              "correctExplanation": "Trees grow, need water, and make food—so they are living things!"
+            },
+            {
+              "question": "What do all living things need to survive?",
+              "answers": ["Books", "Sunlight", "Money", "Cars"],
+              "correctAnswer": 1,
+              "correctExplanation": "Sunlight helps plants grow and gives energy to all living things."
+            },
+            {
+              "question": "Which of these does NOT grow?",
+              "answers": ["Dog", "Chair", "Plant", "Fish"],
+              "correctAnswer": 1,
+              "correctExplanation": "A chair is not alive, so it doesn’t grow."
+            },
+            {
+              "question": "All living things can...",
+              "answers": ["Make noise", "Eat pizza", "Move, grow, and reproduce", "Watch TV"],
+              "correctAnswer": 2,
+              "correctExplanation": "Living things move, grow, and make more of themselves."
+            },
+            {
+              "question": "Which of these is nonliving?",
+              "answers": ["Cat", "Bird", "Pencil", "Mushroom"],
+              "correctAnswer": 2,
+              "correctExplanation": "A pencil is made by people and doesn’t grow or breathe."
+            },
+            {
+              "question": "How can you tell if something is living?",
+              "answers": ["It’s colorful", "It moves and grows", "It’s small", "It’s made of metal"],
+              "correctAnswer": 1,
+              "correctExplanation": "Living things grow and change over time."
+            },
+            {
+              "question": "Which of these living things can fly?",
+              "answers": ["Rock", "Tree", "Eagle", "Shoe"],
+              "correctAnswer": 2,
+              "correctExplanation": "Eagles are living animals that can fly."
+            }
+          ]
+        },
+        {
+          "title": "Animal Habitats",
+          "desc": "Discover where different animals live.",
+          "questions": [
+            {
+              "question": "Where do fish live?",
+              "answers": ["In trees", "In water", "On mountains", "In the sky"],
+              "correctAnswer": 1,
+              "correctExplanation": "Fish live in water where they can swim and breathe."
+            },
+            {
+              "question": "Which animal lives in the desert?",
+              "answers": ["Frog", "Penguin", "Camel", "Shark"],
+              "correctAnswer": 2,
+              "correctExplanation": "Camels live in the desert and store water to stay hydrated."
+            },
+            {
+              "question": "Where do polar bears live?",
+              "answers": ["Rainforest", "Savanna", "Arctic", "Ocean"],
+              "correctAnswer": 2,
+              "correctExplanation": "Polar bears live in cold Arctic areas with lots of snow and ice."
+            },
+            {
+              "question": "What kind of habitat is a forest?",
+              "answers": ["Hot and dry", "Cold and icy", "Wet and full of trees", "Underwater"],
+              "correctAnswer": 2,
+              "correctExplanation": "Forests are home to many trees and animals."
+            },
+            {
+              "question": "Which of these animals lives in a tree?",
+              "answers": ["Monkey", "Penguin", "Fish", "Crab"],
+              "correctAnswer": 0,
+              "correctExplanation": "Monkeys often live in trees and swing from branch to branch."
+            },
+            {
+              "question": "Where do frogs usually live?",
+              "answers": ["Desert", "Ocean", "Near ponds or wetlands", "Mountains"],
+              "correctAnswer": 2,
+              "correctExplanation": "Frogs live near water so they can keep their skin moist."
+            },
+            {
+              "question": "What kind of home does a beaver build?",
+              "answers": ["Nest", "Dam", "Burrow", "Cave"],
+              "correctAnswer": 1,
+              "correctExplanation": "Beavers build dams in rivers using sticks and mud."
+            }
+          ]
+        },
+        {
+          "title": "Plant Life",
+          "desc": "Understand how plants grow and what they need.",
+          "questions": [
+            {
+              "question": "What do plants need to grow?",
+              "answers": ["Sunlight, water, and soil", "Candy, juice, and toys", "Snow, fire, and wind", "TV, books, and pencils"],
+              "correctAnswer": 0,
+              "correctExplanation": "Plants use sunlight, water, and soil to make their food and grow."
+            },
+            {
+              "question": "What part of the plant takes in water?",
+              "answers": ["Stem", "Leaf", "Root", "Flower"],
+              "correctAnswer": 2,
+              "correctExplanation": "Roots grow underground and pull in water from the soil."
+            },
+            {
+              "question": "Which part of the plant makes seeds?",
+              "answers": ["Roots", "Leaves", "Flower", "Stem"],
+              "correctAnswer": 2,
+              "correctExplanation": "Flowers make seeds so new plants can grow."
+            },
+            {
+              "question": "What do leaves do?",
+              "answers": ["Eat bugs", "Make food for the plant", "Dig in soil", "Grow flowers"],
+              "correctAnswer": 1,
+              "correctExplanation": "Leaves make food for the plant using sunlight."
+            },
+            {
+              "question": "Which of these is a fruit?",
+              "answers": ["Carrot", "Potato", "Apple", "Lettuce"],
+              "correctAnswer": 2,
+              "correctExplanation": "Apples come from the flower of a plant and have seeds—so they’re fruits!"
+            },
+            {
+              "question": "What color are most leaves?",
+              "answers": ["Green", "Blue", "Pink", "Black"],
+              "correctAnswer": 0,
+              "correctExplanation": "Most leaves are green because of a chemical called chlorophyll."
+            },
+            {
+              "question": "Where do seeds grow into new plants?",
+              "answers": ["Sky", "Soil", "Waterfall", "Couch"],
+              "correctAnswer": 1,
+              "correctExplanation": "Seeds grow in soil, where they get nutrients and water."
+            }
+          ]
+        },
+        {
+          "title": "Life Cycles",
+          "desc": "Follow how living things grow and change over time.",
+          "questions": [
+            {
+              "question": "Which is the correct order of a butterfly’s life cycle?",
+              "answers": ["Egg, caterpillar, chrysalis, butterfly", "Butterfly, egg, chrysalis, caterpillar", "Caterpillar, egg, butterfly, chrysalis", "Chrysalis, caterpillar, egg, butterfly"],
+              "correctAnswer": 0,
+              "correctExplanation": "Butterflies start as eggs, hatch into caterpillars, form a chrysalis, then emerge as butterflies."
+            },
+            {
+              "question": "What is the baby form of a frog called?",
+              "answers": ["Kitten", "Tadpole", "Larva", "Cub"],
+              "correctAnswer": 1,
+              "correctExplanation": "Frogs hatch from eggs into tadpoles before becoming adult frogs."
+            },
+            {
+              "question": "What do all animals do as part of their life cycle?",
+              "answers": ["Drive cars", "Go to school", "Grow and change", "Eat candy"],
+              "correctAnswer": 2,
+              "correctExplanation": "All animals grow, change, and reproduce during their life."
+            },
+            {
+              "question": "What is a life cycle?",
+              "answers": ["A bicycle made of life", "How something lives and grows", "A spinning plant", "The circle of plants"],
+              "correctAnswer": 1,
+              "correctExplanation": "A life cycle shows how living things grow and change from birth to adult."
+            },
+            {
+              "question": "How do chickens start their life?",
+              "answers": ["In a pond", "In an egg", "In a cave", "As a butterfly"],
+              "correctAnswer": 1,
+              "correctExplanation": "Chickens hatch from eggs."
+            },
+            {
+              "question": "Which animal goes through metamorphosis?",
+              "answers": ["Cat", "Horse", "Butterfly", "Elephant"],
+              "correctAnswer": 2,
+              "correctExplanation": "Butterflies change shape completely in their life cycle."
+            },
+            {
+              "question": "What do plants grow from?",
+              "answers": ["Stems", "Eggs", "Roots", "Seeds"],
+              "correctAnswer": 3,
+              "correctExplanation": "Plants start their life cycle from seeds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trailID": "ela01",
+      "title": "Reading Adventures",
+      "desc": "Build your reading skills by exploring stories, main ideas, and characters.",
+      "subject": "ela",
+      "grade": "elementary",
+      "checkpoints": [
+        {
+          "title": "Story Elements",
+          "desc": "Learn about characters, settings, and plot.",
+          "questions": [
+            {
+              "question": "What is the setting of a story?",
+              "answers": ["The problem", "Where and when it happens", "The characters", "The theme"],
+              "correctAnswer": 1,
+              "correctExplanation": "The setting is where and when the story takes place."
+            },
+            {
+              "question": "Which of these is a character?",
+              "answers": ["Monday", "Mountain", "Lucy the dog", "Happiness"],
+              "correctAnswer": 2,
+              "correctExplanation": "A character is a person or animal in the story."
+            },
+            {
+              "question": "What is the plot?",
+              "answers": ["The story’s title", "The order of events", "The pictures", "The setting"],
+              "correctAnswer": 1,
+              "correctExplanation": "The plot is the sequence of events in the story."
+            },
+            {
+              "question": "Who is usually the main character?",
+              "answers": ["The villain", "The author", "The person the story is mostly about", "The reader"],
+              "correctAnswer": 2,
+              "correctExplanation": "The main character is the one the story focuses on."
+            },
+            {
+              "question": "What is the problem in a story called?",
+              "answers": ["Theme", "Conflict", "Ending", "Plot"],
+              "correctAnswer": 1,
+              "correctExplanation": "The conflict is the problem the characters face."
+            },
+            {
+              "question": "The setting helps readers...",
+              "answers": ["Choose a title", "Know where the author lives", "Imagine the story world", "Finish faster"],
+              "correctAnswer": 2,
+              "correctExplanation": "The setting helps readers picture the story’s world."
+            },
+            {
+              "question": "Which is an example of a plot?",
+              "answers": ["A princess saves her kingdom", "Yellow flowers", "Books and pencils", "The word 'happy'"],
+              "correctAnswer": 0,
+              "correctExplanation": "A plot is a series of events like the princess saving her kingdom."
+            }
+          ]
+        },
+        {
+          "title": "Main Idea",
+          "desc": "Practice finding the big idea of a paragraph or story.",
+          "questions": [
+            {
+              "question": "What is a main idea?",
+              "answers": ["A joke", "The biggest word", "What the text is mostly about", "The end of the story"],
+              "correctAnswer": 2,
+              "correctExplanation": "The main idea is what the text is mostly talking about."
+            },
+            {
+              "question": "Which sentence shows a main idea?",
+              "answers": ["Apples are tasty.", "Apples are a fruit that grow on trees.", "I like apples.", "Apples are red."],
+              "correctAnswer": 1,
+              "correctExplanation": "That sentence tells a big fact about apples, not just an opinion."
+            },
+            {
+              "question": "What helps support a main idea?",
+              "answers": ["Weather", "Details", "Pictures", "Poems"],
+              "correctAnswer": 1,
+              "correctExplanation": "Supporting details give more information about the main idea."
+            },
+            {
+              "question": "Which is a detail, not a main idea?",
+              "answers": ["Birds have feathers.", "Birds fly south in winter.", "Birds are animals that fly.", "Birds are amazing creatures."],
+              "correctAnswer": 1,
+              "correctExplanation": "Flying south is a specific detail that supports the bigger idea."
+            },
+            {
+              "question": "What might be the main idea of a story about a dog learning tricks?",
+              "answers": ["Dogs eat a lot.", "Dogs are fun to play with.", "Training takes time and practice.", "My dog’s name is Max."],
+              "correctAnswer": 2,
+              "correctExplanation": "That sentence gives a lesson or main message about the story."
+            },
+            {
+              "question": "How can you find the main idea?",
+              "answers": ["Read the last sentence only", "Count the words", "Look at the first and last sentences", "Skip the long parts"],
+              "correctAnswer": 2,
+              "correctExplanation": "The first and last sentences often give hints about the main idea."
+            },
+            {
+              "question": "Why is knowing the main idea important?",
+              "answers": ["To win a game", "To understand the story better", "To get the longest answer", "To avoid reading"],
+              "correctAnswer": 1,
+              "correctExplanation": "Knowing the main idea helps you know what the story is really about."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trailID": "math01",
+      "title": "Math in Nature",
+      "desc": "See how math is all around us—in patterns, animals, and the world outside!",
+      "subject": "math",
+      "grade": "elementary",
+      "checkpoints": [
+        {
+          "title": "Counting in Nature",
+          "desc": "Use numbers to explore the world around you.",
+          "questions": [
+            {
+              "question": "How many legs does a spider have?",
+              "answers": ["6", "8", "10", "4"],
+              "correctAnswer": 1,
+              "correctExplanation": "Spiders have 8 legs—more than insects!"
+            },
+            {
+              "question": "If you see 3 trees with 4 apples each, how many apples total?",
+              "answers": ["7", "10", "12", "14"],
+              "correctAnswer": 2,
+              "correctExplanation": "3 × 4 = 12 apples in total."
+            },
+            {
+              "question": "How many legs do two dogs have together?",
+              "answers": ["6", "8", "10", "12"],
+              "correctAnswer": 1,
+              "correctExplanation": "Each dog has 4 legs. 2 × 4 = 8."
+            },
+            {
+              "question": "You see 5 birds flying. 2 fly away. How many are left?",
+              "answers": ["2", "3", "5", "1"],
+              "correctAnswer": 1,
+              "correctExplanation": "5 - 2 = 3 birds still flying."
+            },
+            {
+              "question": "How many petals are on 2 flowers if each has 6 petals?",
+              "answers": ["12", "10", "8", "14"],
+              "correctAnswer": 0,
+              "correctExplanation": "2 × 6 = 12 petals."
+            },
+            {
+              "question": "If you see 4 ants, how many legs do they have in total?",
+              "answers": ["16", "12", "8", "24"],
+              "correctAnswer": 0,
+              "correctExplanation": "Each ant has 6 legs. 4 × 6 = 24."
+            },
+            {
+              "question": "What comes after 18 when counting?",
+              "answers": ["17", "19", "16", "15"],
+              "correctAnswer": 1,
+              "correctExplanation": "The number that comes after 18 is 19."
+            }
+          ]
+        },
+        {
+          "title": "Shapes in Nature",
+          "desc": "Find circles, triangles, and more in the natural world.",
+          "questions": [
+            {
+              "question": "What shape is the sun?",
+              "answers": ["Square", "Circle", "Triangle", "Oval"],
+              "correctAnswer": 1,
+              "correctExplanation": "The sun looks like a round circle in the sky."
+            },
+            {
+              "question": "Which shape is a leaf most like?",
+              "answers": ["Triangle", "Square", "Oval", "Hexagon"],
+              "correctAnswer": 2,
+              "correctExplanation": "Most leaves are shaped like ovals or teardrops."
+            },
+            {
+              "question": "How many sides does a triangle have?",
+              "answers": ["3", "4", "5", "6"],
+              "correctAnswer": 0,
+              "correctExplanation": "Triangles always have 3 sides."
+            },
+            {
+              "question": "What shape do bee hives make?",
+              "answers": ["Circle", "Hexagon", "Square", "Triangle"],
+              "correctAnswer": 1,
+              "correctExplanation": "Bees make honeycombs in hexagons—shapes with 6 sides!"
+            },
+            {
+              "question": "Which of these is shaped like a rectangle?",
+              "answers": ["Tree trunk", "Rock", "Bird", "Flower petal"],
+              "correctAnswer": 0,
+              "correctExplanation": "Tree trunks often grow tall and rectangular."
+            },
+            {
+              "question": "What shape has no corners?",
+              "answers": ["Square", "Triangle", "Circle", "Rectangle"],
+              "correctAnswer": 2,
+              "correctExplanation": "Circles are round and have no corners."
+            },
+            {
+              "question": "What shape is a spider web?",
+              "answers": ["Square", "Oval", "Hexagon", "Circle"],
+              "correctAnswer": 3,
+              "correctExplanation": "Most spider webs are round like circles."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

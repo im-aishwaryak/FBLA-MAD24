@@ -598,7 +598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236766878}
-  - component: {fileID: 236766877}
+  - component: {fileID: 236766879}
   m_Layer: 0
   m_Name: QuizManager
   m_TagString: Untagged
@@ -606,34 +606,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &236766877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236766876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fdcfc9d14ebf5148ba7f5c820a19689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionText: {fileID: 1696664230}
-  answerButtons:
-  - {fileID: 1196809223}
-  - {fileID: 389165240}
-  - {fileID: 1802859319}
-  - {fileID: 893395028}
-  scoreText: {fileID: 209541852}
-  explanationText: {fileID: 1150564505}
-  subject: Biology
-  csvReader: {fileID: 1073260706}
-  correctColor: {r: 0, g: 1, b: 0, a: 1}
-  wrongColor: {r: 1, g: 0, b: 0, a: 1}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  spriteChanger: {fileID: 170264306}
-  wallChanger: {fileID: 1798854358}
-  questionCount: 0
 --- !u!4 &236766878
 Transform:
   m_ObjectHideFlags: 0
@@ -649,6 +621,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236766879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236766876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe41c96ad3388b349bd5410fb3ad541a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionText: {fileID: 1696664230}
+  answerButtons:
+  - {fileID: 1196809223}
+  - {fileID: 389165240}
+  - {fileID: 1802859319}
+  - {fileID: 893395028}
+  scoreText: {fileID: 209541852}
+  explanationText: {fileID: 1150564505}
+  jsonReader: {fileID: 1073260706}
+  subject: science
+  correctColor: {r: 0, g: 1, b: 0, a: 1}
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  spriteChanger: {fileID: 170264306}
+  wallChanger: {fileID: 1798854358}
 --- !u!1 &370642887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,8 +1722,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073260704}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 397.1702, y: 157.67712, z: 0.271707}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 397.17017, y: 157.67712, z: 0.271707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1737,12 +1736,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073260704}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c91dcd1abd305c4ca5599f1422af762, type: 3}
+  m_Script: {fileID: 11500000, guid: c2b92b000cd60c14d9c25be2c3644af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions: []
+  trailData:
+    trails: []
 --- !u!1 &1109727205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,8 +1780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -244.27997, y: -55.7223}
-  m_SizeDelta: {x: 431.4598, y: 257.8852}
+  m_AnchoredPosition: {x: -244.27997, y: -45.534786}
+  m_SizeDelta: {x: 431.4598, y: 277.1433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109727207
 MonoBehaviour:
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 427, y: 53}
+  m_CellSize: {x: 427, y: 58}
   m_Spacing: {x: 0, y: 15}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -2421,8 +2421,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -244.98294, y: 145.12964}
-  m_SizeDelta: {x: 427.9666, y: 91.9526}
+  m_AnchoredPosition: {x: -244.98294, y: 158.71298}
+  m_SizeDelta: {x: 427.9666, y: 66.2752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696664230
 MonoBehaviour:
@@ -2450,7 +2450,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 15
-    m_MaxSize: 28
+    m_MaxSize: 100
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2905,7 +2905,7 @@ SceneRoots:
   - {fileID: 170264302}
   - {fileID: 673395690}
   - {fileID: 1013052551}
-  - {fileID: 1073260705}
   - {fileID: 236766878}
   - {fileID: 929053159}
   - {fileID: 370642889}
+  - {fileID: 1073260705}

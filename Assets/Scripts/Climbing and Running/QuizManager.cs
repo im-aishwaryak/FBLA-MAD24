@@ -31,7 +31,7 @@ public class QuizManager : MonoBehaviour
     public string subject; 
     void Start()
     {
-        subject = SubjectManager.selectedSubject;
+        subject = "Biology";
 
         Debug.Log(csvReader);
         Debug.Log("Subject = " + subject);

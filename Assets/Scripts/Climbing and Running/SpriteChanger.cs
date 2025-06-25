@@ -53,7 +53,7 @@ public class SpriteChanger : MonoBehaviour
 
         isChangingSprites = false;
 
-        SceneManager.LoadScene("Part 2");
+        SceneManager.LoadScene("DinoRun");
     }
 
     // Coroutine to smoothly move the character to the side
