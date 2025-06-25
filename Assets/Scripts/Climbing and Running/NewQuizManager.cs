@@ -95,8 +95,10 @@ public class NewQuizManager : MonoBehaviour
         }
 
         double accuracy = Math.Round((score / questionCount) * 100);
-        scoreText.text = "Accuracy Rate - " + accuracy + "%";
-        explanationText.text = explanation;
+        scoreText.text = accuracy + "%";
+        string correctAnswerText = currentQuestions[currentQuestionIndex].answers[correctAnswerIndex];
+        explanationText.text = $"Previous Answer: {explanation}";
+
 
         yield return new WaitForSeconds(0.5f);
 

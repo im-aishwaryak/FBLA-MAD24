@@ -1,93 +1,56 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class NavigationManager : MonoBehaviour
 {
-    public void GoToBackpack()
+    public AudioClip clickSound;
+    private AudioSource audioSource;
+
+    void Awake()
     {
-        SceneManager.LoadScene("Backpack");
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        // Load the click sound from Resources/Sounds/correct
+        clickSound = Resources.Load<AudioClip>("Sounds/click");
+        if (clickSound == null)
+        {
+            Debug.LogWarning("Click sound not found");
+        }
     }
 
-    public void GoToDashboard()
+    private IEnumerator PlayClickAndLoad(string sceneName)
     {
-        SceneManager.LoadScene("Dashboard");
+        if (clickSound != null)
+            audioSource.PlayOneShot(clickSound);
+
+        yield return new WaitForSeconds(0.2f); // Short delay to hear sound
+        SceneManager.LoadScene(sceneName);
     }
 
-    public void GoToDinoRun()
-    {
-        SceneManager.LoadScene("DinoRun");
-    }
-
-    public void GoToHome()
-    {
-        SceneManager.LoadScene("Home");
-    }
-
-    public void GoToIntro()
-    {
-        SceneManager.LoadScene("Intro");
-    }
-
-    public void GoToLibrary()
-    {
-        SceneManager.LoadScene("Library");
-    }
-
-    public void GoToLogin()
-    {
-        SceneManager.LoadScene("Login");
-    }
-
-    public void GoToPotions()
-    {
-        SceneManager.LoadScene("Potions");
-    }
-
-    public void GoToPotionShop()
-    {
-        SceneManager.LoadScene("PotionShop");
-    }
-
-    public void GoToProgress()
-    {
-        SceneManager.LoadScene("Progress");
-    }
-
-    public void GoToProgressTracking()
-    {
-        SceneManager.LoadScene("ProgressTracking");
-    }
-
-    public void GoToQuiz()
-    {
-        SceneManager.LoadScene("Quiz");
-    }
-
-    public void GoToSettings()
-    {
-        SceneManager.LoadScene("Settings");
-    }
-
-    public void GoToUserGuide()
-    {
-        SceneManager.LoadScene("UserGuide");
-    }
-
-    public void GoToUserTrails()
-    {
-        SceneManager.LoadScene("UserTrails");
-    }
-
-    public void GoToViewQuestions()
-    {
-        SceneManager.LoadScene("ViewQuestions");
-    }
+    public void GoToBackpack() => StartCoroutine(PlayClickAndLoad("Backpack"));
+    public void GoToDashboard() => StartCoroutine(PlayClickAndLoad("Dashboard"));
+    public void GoToDinoRun() => StartCoroutine(PlayClickAndLoad("DinoRun"));
+    public void GoToHome() => StartCoroutine(PlayClickAndLoad("Home"));
+    public void GoToIntro() => StartCoroutine(PlayClickAndLoad("Intro"));
+    public void GoToLibrary() => StartCoroutine(PlayClickAndLoad("Library"));
+    public void GoToLogin() => StartCoroutine(PlayClickAndLoad("Login"));
+    public void GoToPotions() => StartCoroutine(PlayClickAndLoad("Potions"));
+    public void GoToPotionShop() => StartCoroutine(PlayClickAndLoad("PotionShop"));
+    public void GoToProgress() => StartCoroutine(PlayClickAndLoad("Progress"));
+    public void GoToProgressTracking() => StartCoroutine(PlayClickAndLoad("ProgressTracking"));
+    public void GoToQuiz() => StartCoroutine(PlayClickAndLoad("Quiz"));
+    public void GoToSettings() => StartCoroutine(PlayClickAndLoad("Settings"));
+    public void GoToUserGuide() => StartCoroutine(PlayClickAndLoad("UserGuide"));
+    public void GoToUserTrails() => StartCoroutine(PlayClickAndLoad("UserTrails"));
+    public void GoToViewQuestions() => StartCoroutine(PlayClickAndLoad("ViewQuestions"));
     public void QuitGame()
     {
+        if (clickSound != null)
+            audioSource.PlayOneShot(clickSound);
+
         Application.Quit();
     }
-
 }

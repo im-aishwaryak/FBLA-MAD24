@@ -7,8 +7,8 @@ public class WallChanger : MonoBehaviour
 {
     public float moveForce = 10f;          // Force applied to the wall for each movement
     public float moveDuration = 0.6f;       // Duration of movement in seconds
-    public float maxYPosition = 0;    // Upper boundary for the wall’s position
-    public float minYPosition = 0;     // Lower boundary for the wall’s position
+    public float maxYPosition = 0;    // Upper boundary for the wallï¿½s position
+    public float minYPosition = 0;     // Lower boundary for the wallï¿½s position
 
     private Rigidbody2D rb;
     private bool isMoving = false;
@@ -42,7 +42,7 @@ public class WallChanger : MonoBehaviour
 
         // Update the score UI
         distanceLeft = (transform.position.y - minYPosition);
-        elevationText.text = "Distance Left - " + distanceLeft + " ft";
+        elevationText.text = distanceLeft.ToString("F2");
 
         if ((transform.position.y == minYPosition) && (reachedtop == false))
         {
