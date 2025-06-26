@@ -7,8 +7,13 @@ public class SnowballScript : MonoBehaviour
 {
     public SnowballGenerator snowballGenerator;
     public LogicScript logic;
-    void Start(){
+    Rigidbody2D rb;
+    void Start()
+    {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        rb = GetComponent<Rigidbody2D>();
+        // rb.simulated = false; // Stops all physics interactions
+        // rb.freezeRotation = true;
     }
     
 
@@ -16,8 +21,10 @@ public class SnowballScript : MonoBehaviour
     void Update()
     {
         // Move the snowball to the left based on the current speed
-        if(logic.alive()){
+        if (logic.alive())
+        {
             transform.Translate(Vector2.left * snowballGenerator.currentSpeed * Time.deltaTime);
+            
         }
         if(transform.position.x < -14){
             Destroy(this.gameObject);
@@ -41,9 +48,5 @@ public class SnowballScript : MonoBehaviour
         {
             snowballGenerator.GenerateNextSnowballWithGap(); // Calls generatesnowball method
         }
-
-        
-
-
     }
 }
