@@ -32,9 +32,9 @@ public class SpriteJumper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown){
-            Debug.Log("input!");
-        }
+        //if(Input.anyKeyDown){
+            //Debug.Log("input!");
+        //}
         // Check if the space key is pressed and the character is grounded
         if (Input.GetKeyDown(KeyCode.Space) && (jumpCount < 2))
         {

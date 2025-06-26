@@ -15,7 +15,7 @@ public class QuizManager : MonoBehaviour
     
 
     [SerializeField] private CSVReader csvReader; // Reference to CSVReader
-    private int currentQuestionIndex = 0 + (15 * LogicScript.level);
+    private int currentQuestionIndex = 0 + (15 * LogicScript.checkpoint);
     private double score = 0;
 
     // Answer button colors

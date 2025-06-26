@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class LogicScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int score = 0;
     private bool isAlive = true;
     public GameObject gameOverScreen;
     public GameObject wonGameScreen;
-    public static int level = 0;
+    public static int checkpoint = 0;
 
     public QuizManager quizManager;
 
@@ -19,31 +18,24 @@ public class LogicScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // Update is called once per frame
-    public void gameOver(){
-        Debug.Log("Game Over!");
-        gameOverScreen.SetActive(true);
-        isAlive = false;
-    }
 
     public bool alive(){
         return isAlive;
     }
-
+    public void gameOver()
+    {
+        Debug.Log("Game Over!");
+        gameOverScreen.SetActive(true);
+        isAlive = false;
+    }
     public void gameWon(){
         isAlive = false;
         wonGameScreen.SetActive(true);
-        level ++;
-        Debug.Log("Level Completed!");
+        checkpoint++;
+        Debug.Log("Level Completed! Checkpoint: " + checkpoint);
     }
 
-    public void nextLevel(){
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        level++; 
-        SceneManager.LoadScene("UserTrails");
-    }
-
-    public int getLevel(){
-        return level;
+    public int getCheckpoint(){
+        return checkpoint;
     }
 }

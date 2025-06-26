@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,13 +22,13 @@ public class NavigationManager : MonoBehaviour
         }
     }
 
-    private IEnumerator PlayClickAndLoad(string sceneName)
+    public IEnumerator PlayClickAndLoad(string sceneName)
     {
         if (clickSound != null)
             audioSource.PlayOneShot(clickSound);
-
-        yield return new WaitForSeconds(0.2f); // Short delay to hear sound
+     
         SceneManager.LoadScene(sceneName);
+        yield return new WaitForSeconds(0.2f); // Short delay to hear sound
     }
 
     public void GoToBackpack() => StartCoroutine(PlayClickAndLoad("Backpack"));

@@ -12,7 +12,7 @@ public class NewQuizManager : MonoBehaviour
 
     [SerializeField] private JsonReader jsonReader;  // Reference to your new JSON reader script
 
-    private int currentQuestionIndex = 0 + (15 * LogicScript.level);
+    private int currentQuestionIndex = 0 + (15 * LogicScript.checkpoint);
     private double score = 0;
     private double questionCount = 0;
 
@@ -97,7 +97,7 @@ public class NewQuizManager : MonoBehaviour
         double accuracy = Math.Round((score / questionCount) * 100);
         scoreText.text = accuracy + "%";
         string correctAnswerText = currentQuestions[currentQuestionIndex].answers[correctAnswerIndex];
-        explanationText.text = $"Previous Answer: {explanation}";
+        //explanationText.text = $"Previous Answer: {explanation}";
 
 
         yield return new WaitForSeconds(0.5f);

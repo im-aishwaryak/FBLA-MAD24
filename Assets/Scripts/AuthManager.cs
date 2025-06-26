@@ -124,8 +124,10 @@ public class AuthManager : MonoBehaviour
             { "orders", new Dictionary<string, object>() },
             { "trailsCompleted", new List<string>() },
             { "trailsInProgress", new Dictionary<string, object>() },
-            {"level", 1 }
-    };
+            {"level", 1 },
+            {"potionsSold", 0 },
+            {"potionsInStock", 0 }
+    }; 
 
         docRef.SetAsync(userData).ContinueWithOnMainThread(initTask =>
         {
