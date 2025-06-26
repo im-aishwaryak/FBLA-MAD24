@@ -45,7 +45,8 @@ public class LogicScript : MonoBehaviour
             return;
         }
 
-        trail = TrailManager.trailDict; 
+        trail = TrailManager.trailDict;
+        trail["currentCheckpoint"] = trail["currentCheckpoint"]++; 
         updateCheckpoint(trail);
         //Debug.Log("Level Completed! Checkpoint: " + checkpoint);
     }
