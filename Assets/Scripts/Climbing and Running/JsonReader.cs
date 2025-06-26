@@ -19,7 +19,7 @@ public class JsonReader : MonoBehaviour
         public string desc;
         public List<Question> questions;
     }
-
+    
     [System.Serializable]
     public class Trail
     {

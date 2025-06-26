@@ -2149,6 +2149,7 @@ GameObject:
   - component: {fileID: 983889684}
   - component: {fileID: 983889683}
   - component: {fileID: 983889687}
+  - component: {fileID: 983889688}
   m_Layer: 5
   m_Name: Trail1
   m_TagString: Untagged
@@ -2303,6 +2304,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 983889688}
+        m_TargetAssemblyTypeName: SubjectButtonHandler, Assembly-CSharp
+        m_MethodName: setSubject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &983889688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983889681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669f5252bb0c6884286cb641dd910d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subjectName: bio01
 --- !u!1 &1070024134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,9 +3232,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Explored 0 of 0 checkpoints
-
-    Next stop: '
+  m_Text: 
 --- !u!222 &1402935049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3217,6 +3241,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402935046}
   m_CullTransparentMesh: 1
+--- !u!1 &1532612955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1532612957}
+  - component: {fileID: 1532612956}
+  m_Layer: 0
+  m_Name: TextDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1532612956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532612955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032acc29a4df41944bda861a88b3edb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  checkpoints: 0
+--- !u!4 &1532612957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532612955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1356.1722, y: 545.7345, z: 3.3546584}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1583656314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,3 +4185,4 @@ SceneRoots:
   - {fileID: 1722833475}
   - {fileID: 1070024135}
   - {fileID: 908915383}
+  - {fileID: 1532612957}

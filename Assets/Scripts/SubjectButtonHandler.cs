@@ -24,6 +24,6 @@ public class SubjectButtonHandler : MonoBehaviour
     public void setSubject()
     {
         UnityEngine.Debug.Log("when clicked subject is " + subjectName); 
-        SubjectManager.onSubjectSelected(subjectName); 
+        SubjectManager.onSubjectSelected(subjectName);
     }
 }
