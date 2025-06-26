@@ -9,7 +9,6 @@ public static class SubjectManager
 
     public static void onSubjectSelected(string subject)
     {
-
         SubjectManager.selectedSubject = subject;
         Debug.Log("subject manager subject = " + selectedSubject); 
     }

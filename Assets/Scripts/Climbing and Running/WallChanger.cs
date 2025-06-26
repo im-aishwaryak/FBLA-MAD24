@@ -28,6 +28,7 @@ public class WallChanger : MonoBehaviour
 
     void Start()
     {
+        isMoving = false; 
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic; // Keeps the wall stationary initially
 
@@ -54,8 +55,10 @@ public class WallChanger : MonoBehaviour
     }
     public void Move(bool isCorrect)
     {
+        Debug.Log("does it work??"); 
         if (!isMoving)
         {
+            Debug.Log("moving!"); 
             isMoving = true;
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 0;

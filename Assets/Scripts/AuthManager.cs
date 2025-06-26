@@ -122,8 +122,7 @@ public class AuthManager : MonoBehaviour
             { "currentProfit", 0 },
             { "inventory", new Dictionary<string, object>() },
             { "orders", new Dictionary<string, object>() },
-            { "trailsCompleted", new List<string>() },
-            { "trailsInProgress", new Dictionary<string, object>() },
+            { "trails", new List<Dictionary<string, object>>()  },
             {"level", 1 },
             {"potionsSold", 0 },
             {"potionsInStock", 0 }
