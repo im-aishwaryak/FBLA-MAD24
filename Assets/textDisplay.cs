@@ -12,14 +12,12 @@ public class TextDisplay : MonoBehaviour
 {
 
     public Button[] buttons;
-    public int checkpoints;
+    //public int checkpoints;
     public Dictionary<string, object> trail;
   
     // Start is called before the first frame update
     void Start()
     {
-    
-
         foreach (Button btn in buttons)
         {
             // Get the button's name or any property you want to use
@@ -27,39 +25,34 @@ public class TextDisplay : MonoBehaviour
             if (handler != null)
             {
                 string subjectName = handler.subjectName;
-                findTrail(subjectName);
-            }
-
-            
-
-            // Find the Text component in the button's children
-            //Text btnText = btn.GetComponentInChildren<Details>();
-            //Text btnText = btn.transform.Find("Details").GetComponent<Text>();
-
-            // OR for TMPro
-            TextMeshProUGUI btnText = btn.transform.Find("Details").GetComponent<TextMeshProUGUI>();
-
-            if (btnText != null)
-            {
-                // Set the text based on button name (customize this logic as needed)
-                btnText.text = "Explored " + checkpoints + " of 4 checkpoints\nNext Stop: ";
+                StartCoroutine(updateButtonText(btn, subjectName));
             }
         }
     }
 
-    // Update is called once per frame
-    void Update()
+ 
+    private IEnumerator updateButtonText(Button btn, string subjectName)
     {
-        
-    }
+        Task<int> task = findTrail(subjectName);
+        yield return new WaitUntil(() => task.IsCompleted);
 
-    public async void findTrail(string subjectName)
+        int cp = task.Result;
+
+        Text btnText = btn.transform.Find("Details").GetComponent<Text>(); // or TMP if you're using TMP
+        if (btnText != null)
+        {
+            btnText.text = $"Explored {cp} of 4 checkpoints\nNext Stop: ";
+        }
+
+    } 
+
+    public async Task<int> findTrail(string subjectName)
     {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
         if (user == null)
         {
             Debug.LogError("No user logged in");
-            return;
+            return 0; 
         }
 
 
@@ -83,14 +76,13 @@ public class TextDisplay : MonoBehaviour
                     if (trail["trailID"].ToString().Equals(subjectName))
                     {
                         Debug.Log("found a match!");
-                        checkpoints = Convert.ToInt32(trail["currentCheckpoint"]); 
-                        break;
+                        return Convert.ToInt32(trail["currentCheckpoint"]); 
+                       
                     }
                 }
             }
-
-            // Write updated list back
-            await docRef.UpdateAsync("trails", trailsList);
+            return 0; 
         }
+        return 0;
     }
 }

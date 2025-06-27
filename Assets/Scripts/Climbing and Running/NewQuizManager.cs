@@ -16,7 +16,7 @@ public class NewQuizManager : MonoBehaviour
 
     [SerializeField] private JsonReader jsonReader;  // Reference to your new JSON reader script
 
-    private int currentQuestionIndex = 0 + (15 * LogicScript.checkpoint);
+    private int currentQuestionIndex = 0;
     private double score = 0;
     private double questionCount = 0;
 
@@ -46,22 +46,9 @@ public class NewQuizManager : MonoBehaviour
         if (jsonReader.trailData != null && jsonReader.trailData.trails.Count > 0)
         {
             Debug.Log("YAYYY"); 
-            // Load the first trail with matching subject
+
             selectedTrail = jsonReader.trailData.trails.Find(t => t.trailID == subject);
             StartCoroutine(SaveTrailCoroutine(selectedTrail)); 
-
-            Debug.Log(selectedTrail); 
-            if (selectedTrail != null && selectedTrail.checkpoints.Count > 0)
-            {
-                var questionsList = selectedTrail.checkpoints[0].questions; // Use first checkpoint for now
-                currentQuestions = questionsList.ToArray();
-
-                DisplayQuestion();
-            }
-            else
-            {
-                Debug.LogError("No matching trail or checkpoints found.");
-            }
         }
         else
         {
@@ -73,6 +60,7 @@ public class NewQuizManager : MonoBehaviour
     {
         StopAllCoroutines(); // Clean slate whenever this GameObject becomes active
     }
+
 
     void DisplayQuestion()
     {
@@ -119,7 +107,6 @@ public class NewQuizManager : MonoBehaviour
         string correctAnswerText = currentQuestions[currentQuestionIndex].answers[correctAnswerIndex];
         //explanationText.text = $"Previous Answer: {explanation}";
 
-        Debug.Log("hiya"); 
         yield return new WaitForSeconds(0.5f);
 
         Debug.Log("yo!"); 
@@ -144,14 +131,28 @@ public class NewQuizManager : MonoBehaviour
     }
 
 
-   
+
     private IEnumerator SaveTrailCoroutine(JsonReader.Trail trail)
     {
-        var task = saveTrail(trail);
-        yield return new WaitUntil(() => task.IsCompleted);
+        var saveTask = SaveTrail(trail);
+        yield return new WaitUntil(() => saveTask.IsCompleted);
+
+        //Ensure trailDict is assigned now
+        if (selectedTrail != null && selectedTrail.checkpoints.Count > 0 && trailDict != null)
+        {
+            int checkpoint = Convert.ToInt32(trailDict["currentCheckpoint"]);
+            var questionsList = selectedTrail.checkpoints[checkpoint].questions;
+            currentQuestions = questionsList.ToArray();
+
+            DisplayQuestion();
+        }
+        else
+        {
+            Debug.LogError("Trail or trailDict is null or has no checkpoints.");
+        }
     }
 
-    public async Task saveTrail(JsonReader.Trail newTrail)
+    public async Task SaveTrail(JsonReader.Trail newTrail)
     {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
         if (user == null)
