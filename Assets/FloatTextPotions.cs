@@ -1,35 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class floatingPntScript : MonoBehaviour
+public class FloatTextPotions : MonoBehaviour
 {
-
     // Start is called before the first frame update
-    TextMesh text;
+    Text text;
+    // public Transform canvasTransform;
 
     void Start()
     {
-        text = GetComponent<TextMesh>();
-        if (text.text.Contains("-"))
-        {
-            text.color = Color.red;
-        }
-        else if (text.text.Contains("+"))
-        {
-            text.color = Color.green;
-        }
-        else
-        {
-            text.color = Color.blue;
-        }
+        text = GetComponent<Text>();
+        // text.transform.SetParent(canvasTransform, true);
     }
 
     // Update is called once per frame
     void Update()
     {
         //move the text up a bit
-        transform.Translate(Vector2.up * 1 * Time.deltaTime);
+        transform.Translate(Vector2.up * 70 * Time.deltaTime);
 
         //then change the opacity of the text
         
@@ -43,7 +33,5 @@ public class floatingPntScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-
     }
 }
