@@ -7,7 +7,7 @@ public class groundSpawnerScript : MonoBehaviour
 {
     public GameObject ground;
     private float timer = 0;
-    private float spawnRate = 6.305f;
+    private float spawnRate = 6.30f;
     // Start is called before the first frame update
     void Start()
     {
