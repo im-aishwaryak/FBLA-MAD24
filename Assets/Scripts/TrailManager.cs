@@ -12,4 +12,6 @@ public static class TrailManager
         TrailManager.trailDict = trail;
         Debug.Log("Trail initialized! " + trail);
     }
+
+   
 }

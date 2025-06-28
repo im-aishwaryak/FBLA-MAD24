@@ -29,7 +29,8 @@ public class NewQuizManager : MonoBehaviour
     public SpriteChanger spriteChanger;
     public WallChanger wallChanger;
     public JsonReader.Trail selectedTrail;
-    public Dictionary<string, object> trailDict; 
+    public Dictionary<string, object> trailDict;
+    public FirebaseManager dataHandler; 
 
     // Store the current list of questions
     private JsonReader.Question[] currentQuestions;
@@ -45,10 +46,11 @@ public class NewQuizManager : MonoBehaviour
 
         if (jsonReader.trailData != null && jsonReader.trailData.trails.Count > 0)
         {
-            Debug.Log("YAYYY"); 
-
+            //Debug.Log("YAYYY");
             selectedTrail = jsonReader.trailData.trails.Find(t => t.trailID == subject);
-            StartCoroutine(SaveTrailCoroutine(selectedTrail)); 
+            StartCoroutine(SaveTrailCoroutine(selectedTrail));
+          
+            
         }
         else
         {
@@ -83,7 +85,7 @@ public class NewQuizManager : MonoBehaviour
             int index = i;
             answerButtons[i].onClick.RemoveAllListeners(); // Prevent stacking
             answerButtons[i].onClick.AddListener(() =>
-                StartCoroutine(OnAnswerClicked(index, currentQuestion.correctAnswer, currentQuestion.correctExplanation)));
+            StartCoroutine(OnAnswerClicked(index, currentQuestion.correctAnswer, currentQuestion.correctExplanation)));
         }
     }
 
@@ -141,6 +143,7 @@ public class NewQuizManager : MonoBehaviour
         if (selectedTrail != null && selectedTrail.checkpoints.Count > 0 && trailDict != null)
         {
             int checkpoint = Convert.ToInt32(trailDict["currentCheckpoint"]);
+            Debug.Log("current checkpoint: " + checkpoint); 
             var questionsList = selectedTrail.checkpoints[checkpoint].questions;
             currentQuestions = questionsList.ToArray();
 
@@ -152,6 +155,8 @@ public class NewQuizManager : MonoBehaviour
         }
     }
 
+
+    
     public async Task SaveTrail(JsonReader.Trail newTrail)
     {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
@@ -199,7 +204,7 @@ public class NewQuizManager : MonoBehaviour
                 // If trail doesn't exist, add it
                 if (!trailExists)
                 {
-                    Debug.Log("OMG");
+                    //Debug.Log("OMG");
                     trailDict = ConvertTrailToDict(newTrail);
                     currentTrails.Add(trailDict);
                     // Update the trails field in Firebase
@@ -231,9 +236,8 @@ public class NewQuizManager : MonoBehaviour
         { "subject", trail.subject },
         {"status", "in progress"},
         {"currentCheckpoint", 0 },
-        {"questions", new List<Dictionary<string, object>>()}
+        {"checkpoints", new Dictionary<string, object>()}
     }; 
-
         return trailDict;
     }
 
@@ -241,5 +245,5 @@ public class NewQuizManager : MonoBehaviour
     {
         return trailDict; 
     }
-
 }
+
