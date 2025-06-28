@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ad44421ab8b76c142962d9353d39b02f, type: 3}
   - {fileID: 21300000, guid: cccec70300a46e44eb707b30b5f11f3b, type: 3}
   - {fileID: 21300000, guid: 4bc878a6ce1c25d488224aae19f8bf5f, type: 3}
+  floatingPoint: {fileID: 140884136979313805, guid: f2456eb20b10b6f4ca6ef5889de5b0f2, type: 3}
 --- !u!58 &-5272459587809516987
 CircleCollider2D:
   m_ObjectHideFlags: 0

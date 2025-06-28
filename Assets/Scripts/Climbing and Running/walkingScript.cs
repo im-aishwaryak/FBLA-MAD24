@@ -7,7 +7,7 @@ public class walkingScript : MonoBehaviour
     public Sprite[] walkingSprites;
     public  SpriteRenderer spriteRenderer;
     private int index = 0;
-    private float changeTime = 0.2f;
+    private float changeTime = 0.15f;
     private float timer = 0f;
     // Start is called before the first frame update
     void Start()

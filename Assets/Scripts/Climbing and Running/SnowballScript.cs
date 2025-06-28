@@ -7,6 +7,7 @@ public class SnowballScript : MonoBehaviour
 {
     public SnowballGenerator snowballGenerator;
     public LogicScript logic;
+    public GameObject floatingPoint;//this is the thing that "floates" up the damage number or the incrememntation number or the "oh No!" text
     Rigidbody2D rb;
     void Start()
     {
@@ -39,6 +40,8 @@ public class SnowballScript : MonoBehaviour
         {
             // Debug.Log()
             gameLogicData.Instance.loseStuff();
+            GameObject text = Instantiate(floatingPoint, transform.position, Unity.Mathematics.quaternion.identity);
+            text.transform.GetComponent<TextMesh>().text = "-1 Goldberry \n -1 Thorneberry \n -1 Flareberry";
             Destroy(this.gameObject);
             gameLogicData.Instance.UploadInventoryToFirestore();
         }
