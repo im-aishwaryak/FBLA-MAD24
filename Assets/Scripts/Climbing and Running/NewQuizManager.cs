@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System;
@@ -6,6 +6,7 @@ using Firebase.Auth;
 using Firebase.Firestore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static JsonReader;
 
 public class NewQuizManager : MonoBehaviour
 {
@@ -46,11 +47,8 @@ public class NewQuizManager : MonoBehaviour
 
         if (jsonReader.trailData != null && jsonReader.trailData.trails.Count > 0)
         {
-            //Debug.Log("YAYYY");
             selectedTrail = jsonReader.trailData.trails.Find(t => t.trailID == subject);
             StartCoroutine(SaveTrailCoroutine(selectedTrail));
-          
-            
         }
         else
         {
@@ -107,7 +105,11 @@ public class NewQuizManager : MonoBehaviour
         double accuracy = Math.Round((score / questionCount) * 100);
         scoreText.text = accuracy + "%";
         string correctAnswerText = currentQuestions[currentQuestionIndex].answers[correctAnswerIndex];
-        //explanationText.text = $"Previous Answer: {explanation}";
+        string userAnswerText = currentQuestions[currentQuestionIndex].answers[selectedAnswerIndex]; 
+        explanationText.text = $"Previous Answer: {explanation}";
+
+        //var saveTask3 = SaveQuestion(questionText.text, correctAnswerText, userAnswerText, explanationText.text);
+        //yield return new WaitUntil(() => saveTask3.IsCompleted);
 
         yield return new WaitForSeconds(0.5f);
 
@@ -123,6 +125,35 @@ public class NewQuizManager : MonoBehaviour
       
     }
 
+    /*public async Task SaveQuestion(string questionText, string correctAnswerText, string userAnswerText, string explanationText)
+    {
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        if (user == null)
+        {
+            Debug.LogError("No user logged in");
+            return;
+        }
+
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        DocumentReference docRef = db.Collection("users").Document(user.Email);
+
+        try
+        {
+            DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+            if (snapshot.Exists)
+            {
+                List<object> currentTrails = snapshot.GetValue<List<object>>("trails");
+                int trailIndex = getTrailIndex(currentTrails);
+                int checkpointIndex = Convert.ToInt32(trailDict["currentCheckpoint"]); 
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.LogError($"Error saving checkpoint: {e.Message}");
+        }
+    }*/
+
     private void ChangeButtonColorImmediately(Button button, Color targetColor)
     {
         Image buttonImage = button.GetComponent<Image>();
@@ -131,8 +162,6 @@ public class NewQuizManager : MonoBehaviour
             buttonImage.color = targetColor;
         }
     }
-
-
 
     private IEnumerator SaveTrailCoroutine(JsonReader.Trail trail)
     {
@@ -143,7 +172,11 @@ public class NewQuizManager : MonoBehaviour
         if (selectedTrail != null && selectedTrail.checkpoints.Count > 0 && trailDict != null)
         {
             int checkpoint = Convert.ToInt32(trailDict["currentCheckpoint"]);
-            Debug.Log("current checkpoint: " + checkpoint); 
+            Debug.Log("current checkpoint: " + checkpoint);
+
+            var saveTask2 = SaveCheckpoint(checkpoint);
+            yield return new WaitUntil(() => saveTask2.IsCompleted); 
+
             var questionsList = selectedTrail.checkpoints[checkpoint].questions;
             currentQuestions = questionsList.ToArray();
 
@@ -155,8 +188,70 @@ public class NewQuizManager : MonoBehaviour
         }
     }
 
+    public async Task SaveCheckpoint(int checkpoint)
+    {
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        if (user == null)
+        {
+            Debug.LogError("No user logged in");
+            return;
+        }
 
-    
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        DocumentReference docRef = db.Collection("users").Document(user.Email);
+
+        try
+        {
+            DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+            if (snapshot.Exists)
+            {
+                List<object> currentTrails = snapshot.GetValue<List<object>>("trails");
+                int trailIndex = getTrailIndex(currentTrails);
+
+                if (trailIndex >= 0 && currentTrails[trailIndex] is Dictionary<string, object> trail)
+                {
+                    Dictionary<string, object> checkpoints;
+
+                    if (trail.ContainsKey("checkpoints") && trail["checkpoints"] is Dictionary<string, object> existingCheckpoints)
+                    {
+                        checkpoints = existingCheckpoints;
+                    }
+                    else
+                    {
+                        checkpoints = new Dictionary<string, object>();
+                    }
+
+                    // Only add if not already added
+                    if (!checkpoints.ContainsKey(checkpoint.ToString()))
+                    {
+                        var selectedCP = selectedTrail.checkpoints[checkpoint];
+                        var checkpointDict = convertCheckpointToDict(selectedCP);
+                        checkpoints[checkpoint.ToString()] = checkpointDict;
+
+                        // Put the updated checkpoints dictionary back into the trail
+                        trail["checkpoints"] = checkpoints;
+
+                        // Replace the trail in the list
+                        currentTrails[trailIndex] = trail;
+
+                        // 🔥 Now update the full trails list
+                        await docRef.UpdateAsync("trails", currentTrails);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Trail not found at index: " + trailIndex);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error saving checkpoint: {e.Message}");
+        }
+    }
+
+
     public async Task SaveTrail(JsonReader.Trail newTrail)
     {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
@@ -204,10 +299,9 @@ public class NewQuizManager : MonoBehaviour
                 // If trail doesn't exist, add it
                 if (!trailExists)
                 {
-                    //Debug.Log("OMG");
                     trailDict = ConvertTrailToDict(newTrail);
                     currentTrails.Add(trailDict);
-                    // Update the trails field in Firebase
+                    
                     await docRef.UpdateAsync("trails", currentTrails);
                     //Debug.Log($"Trail {newTrail.trailID} added to Firebase");
                 }
@@ -241,9 +335,50 @@ public class NewQuizManager : MonoBehaviour
         return trailDict;
     }
 
-    public Dictionary<string, object> getTrail()
+    public Dictionary<string, object> convertCheckpointToDict(JsonReader.Checkpoint checkpoint)
     {
-        return trailDict; 
+        var checkpointDict = new Dictionary<string, object>
+        {
+            { "checkpointID", checkpoint.title },
+            {"desc", checkpoint.desc },
+            {"questions", new Dictionary<string, object>()},
+            {"accuracy", null}
+        };
+        return checkpointDict; 
+    }
+
+    public int getTrailIndex(List<object> currentTrails)
+    {
+        int index = 0; 
+        foreach (var trailObj in currentTrails)
+        {
+            if (trailObj is Dictionary<string, object> trailDictionary)
+            {
+                if (trailDictionary.ContainsKey("trailID") &&
+                    trailDictionary["trailID"].ToString().Equals(trailDict["trailID"]))
+                {
+                    return index;
+                }
+            }
+            index++; 
+        }
+        return 0; 
+    }
+
+    public Dictionary<string, object> getTrail(List<object> currentTrails)
+    {
+        foreach (var trailObj in currentTrails)
+        {
+            if (trailObj is Dictionary<string, object> trailDictionary)
+            {
+                if (trailDictionary.ContainsKey("trailID") &&
+                    trailDictionary["trailID"].ToString().Equals(trailDict["trailID"]))
+                {
+                    return trailDictionary;
+                }
+            }
+        }
+        return null;
     }
 }
 
