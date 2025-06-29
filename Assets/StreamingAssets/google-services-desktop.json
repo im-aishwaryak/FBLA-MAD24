@@ -12,7 +12,20 @@
           "package_name": "com.fbla.snowpeak"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "665253390663-v5cohtbmq47et5c8iq3rmmjdgqaiif31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fbla.snowpeak",
+            "certificate_hash": "5ad9cd9b9a7767866c3479fd3de3b006bdc2e78c"
+          }
+        },
+        {
+          "client_id": "665253390663-9f4ck71qt1cl5lplc785ku58agsqpr6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB7DD4E8sdeBBlFWaGMAz3TDyJTEzZIqNU"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665253390663-9f4ck71qt1cl5lplc785ku58agsqpr6v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "665253390663-fhlehtphkn6fdt1jikrh1954lf47setl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fbla.snowpeak"
+              }
+            }
+          ]
         }
       }
     }

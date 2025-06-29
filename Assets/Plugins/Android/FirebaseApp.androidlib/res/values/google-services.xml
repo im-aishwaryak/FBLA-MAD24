@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id">
   <string name="gcm_defaultSenderId" translatable="false">665253390663</string>
   <string name="google_storage_bucket" translatable="false">snowpeaksecretsunity.firebasestorage.app</string>
   <string name="project_id" translatable="false">snowpeaksecretsunity</string>
   <string name="google_api_key" translatable="false">AIzaSyB7DD4E8sdeBBlFWaGMAz3TDyJTEzZIqNU</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB7DD4E8sdeBBlFWaGMAz3TDyJTEzZIqNU</string>
   <string name="google_app_id" translatable="false">1:665253390663:android:8186cc1fa2a6cc40440462</string>
+  <string name="default_android_client_id" translatable="false">665253390663-v5cohtbmq47et5c8iq3rmmjdgqaiif31.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">665253390663-9f4ck71qt1cl5lplc785ku58agsqpr6v.apps.googleusercontent.com</string>
 </resources>
