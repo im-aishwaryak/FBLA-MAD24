@@ -125,7 +125,7 @@ public class NewQuizManager : MonoBehaviour
       
     }
 
-    /*public async Task SaveQuestion(string questionText, string correctAnswerText, string userAnswerText, string explanationText)
+    public async Task SaveQuestion(string questionText, string correctAnswerText, string userAnswerText, string explanationText)
     {
         FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
         if (user == null)
@@ -141,18 +141,71 @@ public class NewQuizManager : MonoBehaviour
         {
             DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
 
-            if (snapshot.Exists)
+            if (snapshot.Exists && snapshot.ContainsField("trails"))
             {
                 List<object> currentTrails = snapshot.GetValue<List<object>>("trails");
                 int trailIndex = getTrailIndex(currentTrails);
-                int checkpointIndex = Convert.ToInt32(trailDict["currentCheckpoint"]); 
+                int checkpointIndex = Convert.ToInt32(trailDict["currentCheckpoint"]);
+
+                // Get current trail
+                if (trailIndex >= 0 && currentTrails[trailIndex] is Dictionary<string, object> trail)
+                {
+                    // Get checkpoints
+                    Dictionary<string, object> checkpoints = trail["checkpoints"] as Dictionary<string, object>;
+
+                    if (!checkpoints.ContainsKey(checkpointIndex.ToString()))
+                    {
+                        Debug.LogWarning($"Checkpoint {checkpointIndex} does not exist in trail.");
+                        return;
+                    }
+
+                    Dictionary<string, object> checkpoint = checkpoints[checkpointIndex.ToString()] as Dictionary<string, object>;
+
+                    // Get or create questions dictionary
+                    Dictionary<string, object> questions;
+                    if (checkpoint.ContainsKey("questions") && checkpoint["questions"] is Dictionary<string, object> existingQuestions)
+                    {
+                        questions = existingQuestions;
+                    }
+                    else
+                    {
+                        questions = new Dictionary<string, object>();
+                    }
+
+                    // Create the new question entry
+                    var questionDict = new Dictionary<string, object>
+                {
+                    { "question", questionText },
+                    { "correctAnswer", correctAnswerText },
+                    { "userAnswer", userAnswerText },
+                    { "explanation", explanationText }
+                };
+
+                    // Add the question at the next available index
+                    string questionIndex = questions.Count.ToString();
+                    questions[questionIndex] = questionDict;
+
+                    // Put updated questions back into checkpoint
+                    checkpoint["questions"] = questions;
+                    checkpoints[checkpointIndex.ToString()] = checkpoint;
+                    trail["checkpoints"] = checkpoints;
+                    currentTrails[trailIndex] = trail;
+
+                    // Write updated trails back to Firestore
+                    await docRef.UpdateAsync("trails", currentTrails);
+                    Debug.Log("Question saved to Firebase.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("User document or trails field is missing.");
             }
         }
-        catch(Exception e)
+        catch (Exception e)
         {
-            Debug.LogError($"Error saving checkpoint: {e.Message}");
+            Debug.LogError($"Error saving question: {e.Message}");
         }
-    }*/
+    }
 
     private void ChangeButtonColorImmediately(Button button, Color targetColor)
     {
@@ -278,7 +331,6 @@ public class NewQuizManager : MonoBehaviour
                 {
                     currentTrails = snapshot.GetValue<List<object>>("trails");
                 }
-
                 // Check if trail already exists (by trailID)
                 bool trailExists = false;
                 foreach (var trailObj in currentTrails)
@@ -334,7 +386,6 @@ public class NewQuizManager : MonoBehaviour
     }; 
         return trailDict;
     }
-
     public Dictionary<string, object> convertCheckpointToDict(JsonReader.Checkpoint checkpoint)
     {
         var checkpointDict = new Dictionary<string, object>
@@ -346,7 +397,6 @@ public class NewQuizManager : MonoBehaviour
         };
         return checkpointDict; 
     }
-
     public int getTrailIndex(List<object> currentTrails)
     {
         int index = 0; 
