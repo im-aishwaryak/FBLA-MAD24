@@ -9,6 +9,7 @@ using System;
 
 public class LogicScript : MonoBehaviour
 {
+    //tesing
     public int score = 0;
     private bool isAlive = true;
     public GameObject gameOverScreen;
