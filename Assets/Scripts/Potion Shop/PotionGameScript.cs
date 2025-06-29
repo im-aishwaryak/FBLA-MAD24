@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 public class PotionGameScript : MonoBehaviour
 {
-
+//testing
     //text variables
     public Text countDown;//timer text
     public Text orderCounter;//number of orders taken
