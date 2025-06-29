@@ -99,7 +99,7 @@ public class UserStatsDisplay : MonoBehaviour
                 }
 
                 // 4. Shop Days Open
-                if (userData.TryGetValue("shopDaysOpen", out object daysOpen))
+                if (userData.TryGetValue("potionsSold", out object daysOpen))
                 {
                     potionsSoldText.text = $"{daysOpen}";
                     Debug.Log("Shop days open: " + daysOpen);

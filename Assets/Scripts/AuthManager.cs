@@ -5,7 +5,7 @@ using UnityEngine;
 using Firebase;
 using Firebase.Extensions;
 using Firebase.Auth;
-using UnityEngine;
+using UnityEngine.UI; 
 using TMPro;
 using UnityEngine.SceneManagement;
 using Firebase.Firestore;
@@ -18,15 +18,53 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField EmailField;
     public TMP_InputField PasswordField;
     public TextMeshProUGUI errorText;
-    public GameObject ErrorBox; 
+    public GameObject ErrorBox;
+
+    private bool isFirebaseReady = false;
 
     void Start()
     {
-        auth = FirebaseAuth.DefaultInstance;
+        if (FirebaseInit.IsFirebaseReady)
+        {
+            OnFirebaseReady();
+        }
+        else
+        {
+            // Subscribe to Firebase ready event
+            FirebaseInit.OnFirebaseReady += OnFirebaseReady;
+        }
     }
 
-    public void SignUp()
+    void OnDestroy()
     {
+        // Unsubscribe from event to prevent memory leaks
+        FirebaseInit.OnFirebaseReady -= OnFirebaseReady;
+    }
+
+    void OnFirebaseReady()
+    {
+        auth = FirebaseAuth.DefaultInstance;
+        isFirebaseReady = true;
+
+        if (auth == null)
+        {
+            Debug.LogError("Firebase Auth is still null after initialization!");
+            return;
+        }
+
+        Debug.Log("AuthManager: Firebase Auth is ready!");
+    }
+
+        public void SignUp()
+    {
+
+
+        if (!isFirebaseReady)
+        {
+            ShowError("Please wait, Firebase is initializing...");
+            return;
+        }
+
         string email = EmailField.text;
         string password = PasswordField.text;
 
@@ -52,13 +90,35 @@ public class AuthManager : MonoBehaviour
 
     public void Login()
     {
+
+
+        if (!isFirebaseReady)
+        {
+            ShowError("Please wait, Firebase is initializing...");
+            return;
+        }
+
+        if (auth == null)
+        {
+            Debug.LogError("Firebase Auth is not initialized!");
+            ShowError("Authentication service unavailable");
+            return;
+        }
+        Debug.Log("lol");
         string email = EmailField.text;
         string password = PasswordField.text;
+        if(EmailField == null || PasswordField == null)
+        {
+            Debug.Log("Email: " + email);
+            Debug.Log("Password: " + password); 
+        }
 
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
+            Debug.Log("works here"); 
             if (task.IsCanceled || task.IsFaulted)
             {
+                Debug.Log("WHATTT"); 
                 FirebaseException firebaseEx = task.Exception?.Flatten().InnerExceptions[0] as FirebaseException;
                 AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
 
@@ -66,7 +126,7 @@ public class AuthManager : MonoBehaviour
                 ShowError(msg);
                 return;
             }
-
+            Debug.Log("no issue!"); 
             FirebaseUser user = task.Result.User;
             Debug.Log("Logged in as: " + user.Email);
             SceneManager.LoadScene("Home");

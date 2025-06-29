@@ -8,7 +8,12 @@ using Firebase.Firestore;
 
 public class FirebaseInit : MonoBehaviour
 {
-    FirebaseFirestore firestore; 
+    FirebaseFirestore firestore;
+
+    // Event to notify when Firebase is ready
+    public static System.Action OnFirebaseReady;
+    public static bool IsFirebaseReady { get; private set; } = false;
+
     void Awake()
     {
         if (FindObjectsOfType<FirebaseInit>().Length > 1)
@@ -25,14 +30,19 @@ public class FirebaseInit : MonoBehaviour
             {
                 var app = Firebase.FirebaseApp.DefaultInstance;
                 Debug.Log("Firebase is ready to go!");
-                // Now you can safely use FirebaseAuth and other services
 
+                // Initialize Firestore
                 firestore = FirebaseFirestore.DefaultInstance;
                 Debug.Log("Firestore is ready to go!");
+
+                // Set ready flag and notify listeners
+                IsFirebaseReady = true;
+                OnFirebaseReady?.Invoke();
             }
             else
             {
                 Debug.LogError("Could not resolve Firebase dependencies: " + dependencyStatus);
+                IsFirebaseReady = false;
             }
         });
     }
