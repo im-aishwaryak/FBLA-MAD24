@@ -10,6 +10,7 @@ public class Dropper : MonoBehaviour, IPointerClickHandler
     public PotionGameScript logic;
     void Start()
     {
+        //testing
         // logic = GetComponent<PotionGameScript>();
         logic = GameObject.Find("LogicObjectName").GetComponent<PotionGameScript>();
     }
