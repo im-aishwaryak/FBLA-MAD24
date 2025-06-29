@@ -22,6 +22,8 @@ public class PotionGameScript : MonoBehaviour
     public Text GBCount;//Goldberry text
     public Text slot1Txt;//slot 1 count of item
     public Text slot2Txt;//slot 2 count of item
+    public GameObject floatingPoint;//this is the thing that "floates" up the damage number or the incrememntation number or the "oh No!" text
+    public Canvas canvas; // drag your Canvas in the Inspector
 
 
     //variables in game
@@ -211,26 +213,42 @@ public class PotionGameScript : MonoBehaviour
         //first you want to check if it is a valid potion
 
         //you can do this by looking through the orders, comparing the recipies of them to what they have
-        if(checkPotion(i1)){
+        if (checkPotion(i1))
+        {
             //it matches potion 1
             calculateRewards(i1);
-        } else if(checkPotion(i2)){
+            popUp();
+
+        }
+        else if (checkPotion(i2))
+        {
             //it matches potion 2
             calculateRewards(i2);
-        } else if(checkPotion(i3)){
+            popUp();
+        }
+        else if (checkPotion(i3))
+        {
             //it matches potion 3
             calculateRewards(i3);
+            popUp();
         }
-        
-        
-        
     }
 
-    private bool checkPotion(int i){
+    private void popUp()
+    {
+        GameObject text = Instantiate(floatingPoint, new Vector3(6.091f, 352.9f, 0), Unity.Mathematics.quaternion.identity);
+        text.transform.SetParent(canvas.transform, false); // 'false' = keep local scale/position
+    }
+
+    private bool checkPotion(int i)
+    {
         // bool output = false;
-        if(potions[i].getI1Name().Equals(slots[0].getName()) && potions[i].getI2Name().Equals(slots[1].getName()) && (potions[i].getI1Count() == slots[0].getCount() && potions[i].getI2Count() == slots[1].getCount())){
-            return true; 
-        } else if(potions[i].getI1Name().Equals(slots[1].getName()) && potions[i].getI2Name().Equals(slots[0].getName()) && (potions[i].getI1Count() == slots[1].getCount() && potions[i].getI2Count() == slots[0].getCount())){
+        if (potions[i].getI1Name().Equals(slots[0].getName()) && potions[i].getI2Name().Equals(slots[1].getName()) && (potions[i].getI1Count() == slots[0].getCount() && potions[i].getI2Count() == slots[1].getCount()))
+        {
+            return true;
+        }
+        else if (potions[i].getI1Name().Equals(slots[1].getName()) && potions[i].getI2Name().Equals(slots[0].getName()) && (potions[i].getI1Count() == slots[1].getCount() && potions[i].getI2Count() == slots[0].getCount()))
+        {
             return true;
         }
         return false;

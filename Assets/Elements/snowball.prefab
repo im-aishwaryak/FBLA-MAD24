@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballGenerator: {fileID: 0}
   logic: {fileID: 0}
+  floatingPoint: {fileID: 140884136979313805, guid: f2456eb20b10b6f4ca6ef5889de5b0f2, type: 3}
 --- !u!1 &8082169642735744780
 GameObject:
   m_ObjectHideFlags: 0
