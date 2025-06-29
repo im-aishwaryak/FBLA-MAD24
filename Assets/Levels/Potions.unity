@@ -3247,7 +3247,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1070024136}
         m_TargetAssemblyTypeName: NavigationManager, Assembly-CSharp
-        m_MethodName: GoToShop
+        m_MethodName: GoToHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
