@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class shipPotion : MonoBehaviour, IPointerClickHandler
 {
     // Start is called before the first frame update
     public PotionGameScript logic;
+    
+
 
     void Start()
     {
@@ -20,5 +23,8 @@ public class shipPotion : MonoBehaviour, IPointerClickHandler
         Debug.Log(this.name);
         Debug.Log("is logic null: " + logic);
         logic.shipPotion();
+        
+
+        Debug.Log("Shipped!");
     }
 }

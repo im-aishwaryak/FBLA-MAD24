@@ -734,9 +734,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 96018278fc9246d46a367ade3a7995d3, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 38
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1524,9 +1524,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 96018278fc9246d46a367ade3a7995d3, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 38
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1851,6 +1851,8 @@ MonoBehaviour:
   GBCount: {fileID: 2079114790}
   slot1Txt: {fileID: 882794701}
   slot2Txt: {fileID: 1901481446}
+  floatingPoint: {fileID: 1485247240572835047, guid: 6634a4fe355944c4fb2e5e0661aea2a0, type: 3}
+  canvas: {fileID: 1679403667}
   ingredients:
   - {fileID: 21300000, guid: 4bc878a6ce1c25d488224aae19f8bf5f, type: 3}
   - {fileID: 21300000, guid: ad44421ab8b76c142962d9353d39b02f, type: 3}
@@ -2560,9 +2562,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 96018278fc9246d46a367ade3a7995d3, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 38
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
